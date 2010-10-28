@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Управление деревом каталога</title>
+</head>
+<body>
+<style>
+ul{
+font-size:14px;
+list-style:none;
+}
+a {
+color: blue;
+}
+</style>
+<script language="JavaScript">
+	function show_hide_node(inode,type){
+		var node = document.getElementById('sub_'+inode);
+		var ahref = document.getElementById('hr_'+inode);
+		if(node.style.display=='none'){
+			node.style.display = 'block';
+			ahref.innerHTML = '[-]';
+		} else if( type != 'show'){
+			node.style.display = 'none';
+			ahref.innerHTML = '[+]';
+		}
+	}
+</script>
+<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+<tr>
+<td style="width:30%;" valign="top">
+<!-- tree section -->
+{{BEGIN current_tree}}
+{{tree_message}}
+{{BEGIN tree_nodes}}
+	<ul>
+	<li><a href="#" id="hr_{{tree_id}}" style="text-decoration:none;{{ if( $not_count_subs, 'display:none;')}}" OnClick="JavaScript: show_hide_node({{tree_id}},''); return false;">[+]</a>&nbsp;<a href="?action=show_node&data[tree_id]={{tree_id}}" {{ if(is_current, 'style="color:red;"')}}>{{$tree_name}}</a></li>
+	<li>
+		<ul id="sub_{{$tree_id}}" style="display:none;">
+			{{BEGIN childs}}
+			<li style="margin-bottom:5px;"><a href="?action=show_node&data[tree_id]={{tree_id}}" {{ if(is_current, 'style="color:red;"')}}>{{$tree_name}}</a> (<a href="relations.php?data[node_id]={{tree_id}}" target="_blank">Редактировать привязку</a>)<br><span style="font-size:80%;">({{$group_name}})</span><br></li>
+			{{ if(is_current, '<script language="JavaScript">show_hide_node(')}}{{ if(is_current,$tree_parent)}}{{ if(is_current, ',"show");</script>')}}
+			{{END}}
+		</ul>
+	</li>
+	</ul>
+{{ if(is_current, '<script language="JavaScript">show_hide_node(')}}{{ if(is_current,$tree_id)}}{{ if(is_current, ',"show");</script>')}}	
+{{END}}
+{{END}}
+
+<!-- end tree section -->
+</td>
+<td valign="top">
+<!-- work area -->
+<a href="?action=add_node">Добавить раздел</a><br><br>
+{{BEGIN current_node}}
+<style>
+input {
+	width:300px;
+}
+
+td {
+	border-top: 1px black solid;
+	padding: 5px 5px 5px 5px;
+}
+
+select {
+	width:300px;
+}
+</style>
+<br>
+<form action="" method="post">
+<input type="hidden" name="action" value="save_node" />
+<input type="hidden" name="data[tree_id]" value="{{tree_id}}" />
+<table border="0" cellpadding="0" cellspacing="0" class="node_table"> 
+	<tr>
+		<td valign="top">Название раздела</td>
+		<td><input type="text" name="data[tree_name]" value="{{tree_name}}"></td>
+	</tr>
+	<tr>
+		<td valign="top">Родительский раздел</td>
+		<td><select name="data[tree_parent]">
+				<option value="0">Корневой
+			{{BEGIN parents}}
+				<option value="{{tree_id}}" {{ if($is_current,'selected') }}>{{tree_name}}
+			{{END}}
+		</select>{{BEGIN parents_message}}<br><span style="color:red;font-size:10px;">Разделы содержащие подразделы, переносить нельзя.</span>{{END}}</td>
+	</tr>
+	<tr>
+		<td valign="top">Группа</td>
+		<td>
+			<select name="data[tree_group]">
+				<option value="0">Без группы
+			{{BEGIN groups}}
+				<option value="{{tree_group_id}}" {{ if($is_current,'selected') }}>{{tree_group_name}}
+			{{END}}
+			</select><br>или создать новую<br><input type="text" name="data[new_group]"/>
+		</td>
+	</tr>
+	<tr>
+		<td>Сортировка</td>
+		<td><input type="text" name="data[tree_order]" value="{{tree_order}}" /></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="submit" value="Сохранить"></td>
+	</tr>
+	<tr style="display:{{ if(tree_id,'block','none') }};"><td colspan="2"><a href="?action=delete_node&data[tree_id]={{tree_id}}">Удалить раздел</a><br>
+	<span style="color:red;font-size:12px">ВНИМАНИЕ. Подразделы будут так же удалены.</span></td></tr>
+</table>
+</form>
+{{END}}
+<!-- end work area -->
+</td>
+</tr>
+</table>
+</body>
+</html>

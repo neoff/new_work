@@ -1,0 +1,682 @@
+BODY, HTML {margin:0; padding:0px; background-color: #FFF;}
+SELECT, INPUT {font : normal normal normal 10px Tahoma, Helvetica, sans-serif; border : 1px solid Gray; margin: 2px 0px 2px 0px; padding: 0 0 0 2px;}
+FORM {margin: 0px; padding: 0px;}
+
+a	{text-decoration : none ; color:#514C65}
+a:hover{text-decoration : none ; color:red;}
+
+.TahBlack10 {font : normal normal 10px Tahoma, Arial, Helvetica, sans-serif; color: #000;}
+.TahBlack10 a {text-decoration:none;color:#000}
+.TahBlack10 a:hover {text-decoration:underline;color:red}
+
+/* Dotted blockes and tables */
+.dottedLeft {padding: 0px 0px 0px 1px; background: url(http://www.mvideo.ru/imgs/bg3vd.gif) repeat-y 0 0;}
+
+/* mvideo.css */
+body {margin:0;font : 11px Tahoma; color: #000000;width:100%;}
+img {border:none;}
+.nba a,
+a.nba,
+.cart_aks a
+	{font-weight:normal;}
+a,
+.ba a
+	{color:#000;text-decoration:none;font-weight:bold;}
+a:hover,
+.ba a:hover,
+.nba a:hover
+	{color:#ed212e;text-decoration:underline;}
+
+SELECT, INPUT {font : normal normal normal 10px Tahoma, Helvetica, sans-serif; border : 1px solid Gray; margin: 2px 0px 2px 0px; padding: 0 0 0 2px;}
+
+FORM {margin: 0px; padding: 0px;}
+.red, a.red {color:#ed1c29;}
+.black {color:#000;}
+
+.TahBlack10 {font : 11px Tahoma; color: #000;}
+
+.main_news td#vline,
+.main_news td.news_vline
+	{background:url(http://www.mvideo.ru/new_imgs/grey_dot.gif) repeat-y right;}
+.main_news tr#bot td,
+.main_news tr.news_bot td
+	{padding-top:5px;}
+.main_news td div#hline,
+.main_news td div.news_hline
+	{background:url(http://www.mvideo.ru/new_imgs/grey_dot.gif) repeat-x bottom;height:30px;}
+.main_news td div#text,
+.main_news td div.news_text
+	{padding:0 20px 0px 30px;margin-left:120px;}
+.main_news td div#image,
+.main_news td div.news_image
+	{float:left;margin: 0 0 0px 20px;_margin: 0 0 0px 10px;border:1px solid #c0c0c0;width:105px;height:68px;background:#fff;text-align:center;display:table-cell;vertical-align:middle;}
+.main_news td div#image i,
+.main_news td div.news_image i
+	{display:inline-block;height:100%;}
+.main_news td div#image i,
+.main_news td div.news_image i,
+.main_news td div#image img,
+.main_news td div.news_image img
+	{vertical-align:middle}
+.main_news td div#title,
+.main_news td div.news_title,
+.main_news div#title a,
+.main_news div.news_title a,
+.main_news div#title a:visited,
+.main_news div.news_title a:visited
+	{color:#ef1c22;font-weight:bold;padding-bottom:4px;text-decoration:none;}
+.main_news div#title a:hover,
+.main_news div.news_title a:hover
+	{color:#ef1c22; text-decoration:underline;}
+
+.main_novs div#title,
+.main_novs div.novs_title,
+.main_novs div#title a,
+.main_novs div.novs_title a,
+.main_novs div#title a:hover,
+.main_novs div.novs_title a:hover,
+.main_novs div#title a:visited,
+.main_novs div.novs_title a:visited,
+.main_novs div#title a:link,
+.main_novs div.novs_title a:link {color:#403b55; font-weight:bold; padding-bottom:4px; text-decoration:none;}
+
+.main_novs div#title a.model,
+.main_novs div.novs_title a.model,
+.main_novs div#title a:hover.model,
+.main_novs div.novs_title a:hover.model,
+.main_novs div#title a:visited.model,
+.main_novs div.novs_title a:visited.model,
+.main_novs div#title a:link.model,
+.main_novs div.novs_title a:link.model {color:#868394; /*padding-left:5px;*/}
+
+.grey, a.grey
+	{color:#8c8c8c; text-decoration:none;}
+
+/*----------------------------------------------------
+new_d.css
+-----------------------------------------------------*/
+
+body {padding:0px; margin:0px; font: 11px Tahoma; color: #000000; width:100%;}
+
+.body_div
+{padding:10px; background-color:#f7f7f7;}
+
+.clear {clear:both;}
+.flr {display:block; float:right;}
+
+a:hover, a:hover.grey, .grey a:hover, .leftm a:hover
+{color:#ed212e; text-decoration:underline;}
+
+/* -- картинки в футере -- */
+a.footer_image {display:block; float:left; margin-left:13px; background: url(http://www.mvideo.ru/new_d/sprites/bot_imgs.gif) no-repeat; height:32px;}
+a.footer_image:hover {text-decoration:none;}
+a.twitter {width:28px;}
+a.facebook {width:28px;background-position: -28px 0px;}
+a.master {width:51px;background-position: -56px 0px;}
+a.visa {width:71px;background-position: -108px 0px;}
+a.secureCode {width:80px;background-position: -180px 0px;}
+a.verified {width:75px;background-position: -260px 0px;}
+
+.rb {}
+.rb .content_rb {border:1px solid #cacaca; text-align:center; padding:10px; padding-top:20px;}
+.rb .content_rb#bannerImage {height:118px; padding:20px 0 20px 0; margin:0; z-index:1;}
+.rb .t_rb {position:relative; _background:url(http://www.mvideo.ru/new_imgs/e.gif) repeat-x top #dea;}
+.rb .b_rb {position:relative; _height:1px;}
+.rb .t_rb div, .rb .b_rb div, .rb .tt_rb .l_rb, .rb .tt_rb .r_rb{position:absolute; padding:0; margin:0; background: url(http://www.mvideo.ru/new_d/sprites/rb_corners.gif) no-repeat;}
+.rb .t_rb div#rb_title,
+.rb .t_rb div.rb_title {width:100%; top:-12px; background:none;}
+.rb .t_rb .l_rb {top:0px; left:0; width:21px; height:22px; background-position: -42px 0;}
+.rb .t_rb .r_rb {top:0px; right:0px; width:21px; height:22px; background-position: -63px 0; _right:-1px;}
+.rb .tt_rb {height:22px;position:relative;text-align:center;font:14px Tahoma;font-weight:bold;color:#ed1c29;}
+.rb .tt_rb, .rb .tt_rb h1, .rb .tt_rb h2, .rb .tt_rb#h_rb_s {font:11px Tahoma; font-weight:bold; color:#ed1c29; padding:0; margin:0;}
+.rb .tt_rb#h_rb_m {font:14px Tahoma; font-weight:bold; color:#ed1c29; line-height:29px; padding:0; margin:0;}
+.rb .tt_rb td#h_rb td.header_rb {position:relative; padding:0 10px 3px 10px; background:url(http://www.mvideo.ru/new_d/sprites/bgs.gif) 0 -21px repeat-x;}
+.rb .tt_rb .l_rb {width:13px; height:24px; position:relative; background-position: 0 -22px;}
+.rb .tt_rb .r_rb {position:relative; width:12px; height:24px; background-position: -13px -22px;}
+.rb .b_rb .l_rb {width:21px; height:22px; background-position: 0 0; bottom:0px; left:0;}
+.rb .b_rb .r_rb {width:21px; height:22px; background-position: -21px 0; bottom:0px; right:0px; _right:-1px;}
+
+.rb .header_rb {position:relative; padding:0 10px 3px 10px; background:url(http://www.mvideo.ru/new_d/sprites/bgs.gif) 0 -21px repeat-x;}
+.rb #h_rb {position:relative; padding:0 10px 3px 10px; background:url(http://www.mvideo.ru/new_d/sprites/bgs.gif) 0 -21px repeat-x;}
+
+.subm_rb {color:#000;z-index:200;}
+.subm_rb .scontent {text-align:center;color:#000;background:#F7F7F7;z-index:200;border-left:#cacaca 1px solid;border-right:#cacaca 1px solid;}
+.subm_rb .sb {position:relative;height:17px;}
+.subm_rb .sb div {position:absolute;padding:0; margin:0;}
+.subm_rb .sb .h {background:url(http://www.mvideo.ru/new_d/subm/bottom.gif) repeat-x bottom;position:relative;height:17px;margin:0 24px 0 24px;}
+.subm_rb .sb .sl {width:24px;height:17px;background:no-repeat url(http://www.mvideo.ru/new_d/subm/left.gif) bottom left;bottom:0px; left:0;_bottom:-1px;}
+.subm_rb .sb .sr {width:24px;height:17px;background:no-repeat url(http://www.mvideo.ru/new_d/subm/right.gif) bottom right;bottom:0px;right:0px;_bottom:-1px;}
+.subm_rb .sb .sr#ie {_right:0px;}
+.subm_rb .scontent ul	{padding:5px 0 0 0; margin:0; width:100%; list-style:none; list-style-type:none;}
+.subm_rb .scontent ul li	{list-style:none; list-style-type:none; /*padding: 3px 15px 3px 20px;*/ padding: 3px 15px 3px 10px; border-bottom:#cacaca 1px solid; text-align:left; text-transform:none;}
+.subm_rb .scontent ul li a, .subm_rb .scontent ul li a:visited, .subm_rb .scontent ul li a:active, .subm_rb .scontent ul li a:link {/* color: #404040; */ color: #000; font: 11px Tahoma; font-weight:normal; text-decoration: none;}
+.subm_rb .scontent ul li a.b62831, .subm_rb .scontent ul li a:visited.b62831, .subm_rb .scontent ul li a:active.b62831, .subm_rb .scontent ul li a:link.b62831 {color: #b62831;}
+.bold {font-weight:bold;}
+.subm_rb .scontent ul li a:hover	{color:#ED212E; text-decoration:underline;}
+
+.subm_item	{z-index:400; position:absolute; top:32px; display:none; padding-left:0px; overflow:hidden;/*нужное*/}
+.subm_item a {padding-left:5px}
+.subm_item a.b62831 {padding-left:0;}
+.subm_item iframe {display:none;/*для IE5*/ display/**/:block;/*для IE5*/ position: absolute;/*обязательно*/ top:0; left:1px; z-index:-1;/*невидимый*/ filter:mask();/*переключает IE Active X в нужный рендер*/ width:900px; height:130px; background:#fff;border:none;}
+
+/* -- numbers -- */
+.number_image {display:block;float:left;background:url(http://www.mvideo.ru/new_d/sprites/numbers.gif) no-repeat;}
+.numbers_big {height:23px; width:16px;}
+.num_big_1 {background-position: -0 0; width:11px;}
+.num_big_2 {background-position: -13px 0;}
+.num_big_3 {background-position: -29px 0;}
+.num_big_4 {background-position: -45px 0; width:17px;}
+.num_big_5 {background-position: -61px 0;}
+.num_big_6 {background-position: -77px 0;}
+.num_big_7 {background-position: -94px 0;}
+.num_big_8 {background-position: -110px 0;}
+.num_big_9 {background-position: -126px 0;}
+.num_big_0 {background-position: -142px 0;}
+.num_big_ {background-position: -158px 0; width:17px;}
+
+.numbers_overline {height:12px; width:8px;}
+.num_overline_1 {background-position: -0 -40px; width:6px;}
+.num_overline_2 {background-position: -7px -40px;}
+.num_overline_3 {background-position: -15px -40px;}
+.num_overline_4 {background-position: -24px -40px;}
+.num_overline_5 {background-position: -32px -40px;}
+.num_overline_6 {background-position: -41px -40px;}
+.num_overline_7 {background-position: -49px -40px;}
+.num_overline_8 {background-position: -57px -40px;}
+.num_overline_9 {background-position: -66px -40px;}
+.num_overline_0 {background-position: -74px -40px;}
+.num_overline_ {background-position: -82px -40px;}
+
+.numbers_ssmall {height:12px; width:8px;}
+.num_ssmall_1 {background-position: -0 -26px; width:6px;}
+.num_ssmall_2 {background-position: -7px -26px;}
+.num_ssmall_3 {background-position: -15px -26px;}
+.num_ssmall_4 {background-position: -24px -26px;}
+.num_ssmall_5 {background-position: -32px -26px;}
+.num_ssmall_6 {background-position: -41px -26px;}
+.num_ssmall_7 {background-position: -49px -26px;}
+.num_ssmall_8 {background-position: -57px -26px;}
+.num_ssmall_9 {background-position: -66px -26px;}
+.num_ssmall_0 {background-position: -74px -26px;}
+.num_ssmall_ {background-position: -82px -26px;}
+
+.numbers_small {height:12px; width:8px;}
+.num_small_1 {background-position: -0 -26px; width:6px;}
+.num_small_2 {background-position: -7px -26px;}
+.num_small_3 {background-position: -15px -26px;}
+.num_small_4 {background-position: -24px -26px;}
+.num_small_5 {background-position: -32px -26px;}
+.num_small_6 {background-position: -41px -26px;}
+.num_small_7 {background-position: -49px -26px;}
+.num_small_8 {background-position: -57px -26px;}
+.num_small_9 {background-position: -66px -26px;}
+.num_small_0 {background-position: -74px -26px;}
+.num_small_ {background-position: -82px -26px;}
+
+/* -- pages_list -- */
+
+/*----------------------------------------------------
+mvideo.css
+-----------------------------------------------------*/
+
+div.clear {clear:both; height:10px;}
+div.offset {clear:both; height:20px;}
+.w100pc {width:100%;}
+.centered {text-align:center;}
+.relative {position:relative;}
+
+.redbold {color:#ED1C29; font-weight:600;}
+.redbold span {font-weight:100;}
+
+.normal_a a, .normal_a a:link, .normal_a a:visited, .normal_a a:active {font-weight:normal;}
+
+.corner, #footer_menu li, .leftm_block li, #topm #first, #topm #last {background:url(http://www.mvideo.ru/newdesign/images/sprites/corners.gif) no-repeat;}
+.corner {height:21px; width:21px;}
+.rb_t_l {position:absolute; left:0; top:0; background-position: -42px 0;}
+.rb_t_r {position:absolute; right:0; top:0; background-position: -63px 0;}
+.rb_b_l {position:absolute; left:0; bottom:0; background-position: -42px -21px;}
+.rb_b_r {position:absolute; right:0; bottom:0; background-position: -63px -21px;}
+.rb_t_border {height:10px; border-top: 1px solid #cacaca;}
+.rb_b_border {height:10px; border-bottom:1px solid #cacaca;}
+
+.sprite_line, #topm td {background: url(http://www.mvideo.ru/newdesign/images/sprites/backgrounds.gif) repeat-x;}
+
+/* -- pictures in the footer -- */
+.sprite_footer {background: url(http://www.mvideo.ru/newdesign/images/sprites/bot_imgs.gif) no-repeat;}
+#footer_twitter {width:28px;}
+#footer_facebook {width:28px; background-position: -28px 0px;}
+#footer_master {width:51px; background-position: -56px 0px;}
+#footer_visa {width:71px; background-position: -108px 0px;}
+#footer_secureCode {width:80px; background-position: -180px 0px;}
+#footer_verified {width:75px; background-position: -260px 0px;}
+
+/*
+* Основное
+*/
+#mvideo_body, #mvideo_page {padding:0; margin:0;}
+#mvideo_centered {width:980px; margin:0 auto; padding:10px 0;}
+.mvideo_container {clear:both;}
+.mvideo_content {background-color:#fff; border-left:1px solid #cacaca; border-right:1px solid #cacaca;position:relative;}
+.mvideo_corners {height:13px; position:relative;}
+.mvideo_corners .rb_b_border {margin: 0 21px; background-color:#fff; height:12px;}
+.mvideo_corners .rb_t_border {margin: 0 21px; background-color:#fff; height:12px;}
+
+/*
+* Главное меню
+*/
+#topm {width:100%; border-collapse:collapse; z-index:200;}
+#topm td {text-align:center; text-transform:uppercase;}
+#topm td div {border-right: 1px solid #fff; height:27px; padding-top:3px;}
+#topm #ending div {border:none;}
+#topm td#first {width:12px; background-position: -84px 0;}
+#topm td#last {width:12px; background-position: -97px 0;}
+#topm td a, #topm td a:visited, #topm td a:active, #topm td a:link {color:#fff; font: 9px Tahoma; font-weight:bold; text-decoration:none;}
+#topm td:hover, #topm td a:hover, #topm td a.selected, #topm td a.selected:visited, #topm td a.selected:active, #topm td a.selected:link {color: #fdff5e;}
+#topm #topm2 a, #topm #topm8 a {line-height:24px;}
+#topm td#promo {width:80px; border-left: 1px solid #fff; background:url(http://www.mvideo.ru/newdesign/images/topm_promo.jpg) right top no-repeat;}
+
+/*
+* Левое меню
+*/
+.leftm {width:150px; padding-bottom:10px;}
+.leftm_head {width:145px; margin-top:0; height:23px; line-height:20px; padding-left:5px; background-position: 0 -55px;}
+.leftm_head div {position:relative;width:9px; height:23px; background-position: -6px -42px;}
+.leftm_block {width:149px; border-right:1px solid #CACACA; padding:0;}
+.leftm_block ul {padding: 5px 0 0 10px; margin:0; list-style-type:none;}
+.leftm_block li {padding: 2px 2px 2px 10px; background-position: -116px 7px;}
+.leftm_bottom {width:150px;position:relative; height:20px;}
+.leftm_bottom .rb_b_border {margin-right:20px; height:19px;}
+
+/*
+* Нижнее меню
+*/
+#footer_menu {height:180px; margin:0; padding: 0 30px;}
+#footer_menu div {display:block; float:left; width:20%; margin-top:15px;}
+#footer_menu ul {margin:0; padding: 10px 0 0 0; list-style-type:none;}
+#footer_menu ul li {margin:0; padding: 2px 2px 2px 10px; background-position: -116px 6px;}
+
+/*
+* Иконки
+*/
+.icon {background:url(http://www.mvideo.ru/newdesign/images/sprites/icons.gif) no-repeat;}
+.icon {display:block; float:left; width:18px; height:16px;}
+.icon:hover {text-decoration:none;}
+
+.icon_hand {background-position: -18px 0;}
+.icon_key {background-position: -38px 0; width:12px;}
+.icon_pg_first {background-position: -0 -16px; width:16px; height:11px;}
+.icon_pg_last {background-position: -16px -16px; width:16px; height:11px;}
+.icon_pg_next {background-position: -32px -16px; width:16px; height:11px;}
+.icon_pg_prev {background-position: -48px -16px; width:16px; height:11px;}
+.icon_arr {background-position: -55px -3px; width:9px; height:11px;}
+.icon_go {background-position: -69px 0; width:19px; height:19px; border:none; cursor:pointer;}
+.icon_tocart {background-position: -118px 0; width:129px; height:32px;}
+.icon_m {background-position: -88px 0; width:30px; height:27px;}
+.icon_new {background-position: -247px 0; width:23px; height:12px; margin:3px; float:none; display:inline-block;}
+.icon_inet {background-position: 0 -32px; width:100px; height:12px;}
+.icon_vip {background-position: -100px -32px; width:58px; height:12px;}
+.icon_sale {background-position: -158px -32px; width:71px; height:12px;}
+.icon_wifi {background-position: -229px -32px; width:28px; height:12px;}
+.icon_novelty {background-position: -257px -32px; width:42px; height:12px;}
+
+/*
+* Шапка
+*/
+#main_logo {padding:0 10px 0 10px; vertical-align:top;}
+#main_functions {height:32px;}
+#top_user_menu {float:right; margin:3px 10px 0 0; line-height:22px;}
+#top_user_menu a {line-height:20px; display:block; float:left;}
+#top_user_menu .icon {margin: 2px 5px 0 15px;}
+/* -- top user menu -- */
+
+#main_functions .search {margin-top:2px;} 
+
+/*
+* Поиск
+*/
+.search {float:left;}
+.search * {display:block; float:left; line-height:19px; margin:0px; padding:0px;}
+.search div {height:20px; width:8px;}
+.search .left_end {background-position: -54px -42px;}
+.search .right_end {background-position: -66px -42px;}
+.search #icon_go {border:none; margin-left:3px; cursor:pointer;}
+.search span {margin-right:5px;}
+.search input {border:none; background-position: 0 -36px; width:200px; height:19px; font-size:12px; font-family:arial;}
+
+/* card.css */
+
+/* new common classes */
+.center {text-align:center;}
+.bold {font-weight:bold;}
+.clear1 {clear:both; height:1px;}
+.clear15 {clear:both; height:15px;}
+.clear10 {clear:both; height:10px;}
+.fll {float:left;display:block;}
+
+.black {color:#000;}
+.white, a:link.white {color:#fff;}
+.grey {color:#8C8C8C;}
+
+a.red_a, a:active.red_a, a:visited.red_a, a:link.red_a {color:#ED1C29; font-weight:normal; text-decoration:underline;}
+a:hover.red_a {text-decoration:none;}
+
+.block 			{background:url(http://www.mvideo.ru/newdesign/img/block.gif) no-repeat bottom;display:block;float:left;}
+.block_line 	{background:url(http://www.mvideo.ru/newdesign/img/block_line.gif) repeat-x;display:block;/*float:left;*/}
+
+.rbn .content_rbn, .rbn .content_rbn_grey, .rbn .content_rbn_grey_top_bot, .rbn#fix {border:1px solid #cacaca;padding:0;}
+.rbn .content_rbn_grey, .rbn .content_rbn_grey_top_bot, .rbn#fix {background:#eaeaea;}
+.rbn .content_rbn_grey_title {padding:4px 15px; color:#858583; font-weight:bold;float:left;}
+.rbn .content_rbn_grey_top_bot {border-left:none; border-right:none;}
+.rbn .t_rbn, .rbn .b_rbn, .rbn .block_line_double_rbn {position:relative;}
+.rbn .t_rbn b, .rbn .b_rbn b, .rbn .block_line_double_rbn b{padding:0; margin:0;width:8px;height:8px;}
+
+.rbn .block_l_rbn, .rbn .block_l_rbn_grey {float:left;}
+.rbn .block_r_rbn, .rbn .block_r_rbn_grey {float:right;}
+
+.rbn .b_rbn b {margin-top:-8px;}
+
+.rbn .t_rbn .block_l_rbn {background-position: -17px 0px;width:8px;height:8px;}
+.rbn .t_rbn .block_r_rbn {background-position: -23px 0px;width:8px;height:8px;}
+.rbn .b_rbn .block_l_rbn {background-position: -17px -6px;width:8px;height:8px;}
+.rbn .b_rbn .block_r_rbn {background-position: -23px -6px;width:8px;height:8px;}
+
+.rbn .t_rbn .block_l_rbn_grey {background-position: -17px -28px;}
+.rbn .t_rbn .block_r_rbn_grey {background-position: -23px -28px;}
+.rbn .b_rbn .block_l_rbn_grey {background-position: -17px -20px;}
+.rbn .b_rbn .block_r_rbn_grey {background-position: -23px -20px;}
+
+.rbn .block_line_double_rbn	{display:block;width:100%;background-position: 0px -85px; height:34px;text-align:center;bottom:-1px;position:relative;}
+.rbn .block_line_double_rbn .block_double_left {width:8px;height:34px;background-position: -17px -28px;float:left;}
+.rbn .block_line_double_rbn .block_double_right {width:8px;height:34px;background-position: -23px -28px;float:right;}
+.rbn .block_line_double_rbn .double_text	{padding-top:5px;}
+.rbn .block_line_double_rbn .double_text h2	{padding:0px;margin:0;}
+
+.block#arr_left_red {width:27px;height:31px;background-position: -57px 0px;float:left;}
+.block#arr_right_red {width:27px;height:31px;background-position: -84px 0px;float:left;}
+.block#arr_left_grey {width:27px;height:31px;background-position: -57px -31px;float:left;}
+.block#arr_right_grey {width:27px;height:31px;background-position: -84px -31px;float:left;}
+
+.delivery_table {width:100%;}
+.delivery_table td {padding:10px; border-right:#cacaca 1px solid;border-top:#cacaca 1px solid;}
+
+.delivery_table td#no-rborder {border-right:none;}
+.delivery_table td#no-tborder {border-top:none;}
+.delivery_table td#no-border {border:none;}
+.delivery_table tr td {background:#fff;}
+.delivery_table tr#grey td {background:#EAEAE9;}
+div#top_grey {background:#EAEAE9;width:100%;height:7px;}
+.delivery_table tr.no_tpad td{padding-top:0;}
+/* new common classes end */
+
+.card h1 {font-weight:bold; font-size:16px; display:inline;}
+
+.card_photo_ico {position:relative; width:180px; height:180px;}
+.card_photo_ico .new {position:absolute; top:0; right:0; background:url(http://www.mvideo.ru/newdesign/img/card_photo_ico/new.png) no-repeat top right;width:114px; height:55px;}
+.card_photo_ico .deal {position:absolute; bottom:0; right:0; background:url(http://www.mvideo.ru/newdesign/img/card_photo_ico/deal.png) no-repeat bottom right;width:126px; height:52px;}
+.card_photo_ico .free_delivery {position:absolute; top:0; right:0; background:url(http://www.mvideo.ru/newdesign/img/card_photo_ico/free_delivery.png) no-repeat bottom right;width:104px; height:41px;}
+
+/* deal_of_the_day.css */
+
+img {border:none;}
+
+.star_block	{margin-bottom:6px;}
+.star_block .lb,
+.star_block .rb	{background:url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/star.gif) no-repeat bottom;display:block;float:left;padding:0px;font-size:1px;}
+.star_block .cb	{border:1px solid #cacaca;padding:0;background:transparent url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/grad.gif) left top repeat-x;padding:0px 0px}
+.star_block .tb, .star_block .bb	{position:relative;}
+.star_block .tb b, .star_block .bb b	{padding:0;margin:0;width:6px;height:6px;line-height:1px;font-size:1px;}
+.star_block .lb	{float:left;}
+.star_block .rb	{float:right;}
+.star_block .bb b {margin-top:-6px;}
+.star_block .tb .lb	{background-position: -6px -6px;}
+.star_block .tb .rb	{background-position: 0px -6px;}
+.star_block .bb .lb	{background-position: -6px 0px;}
+.star_block .bb .rb	{background-position: 0px 0px;}
+
+.yellow_caption {position:relative;text-align:center;border-collapse:collapse;top:-17px;}
+.yellow_caption, .yellow_caption th {font:11px Tahoma;font-weight:bold;color:#ed1c29;padding:0;margin:0;}
+.yellow_caption th {padding:0 30px;position:relative;background:url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/yellow_head.png) 0 -35px no-repeat;vertical-align:middle;}
+.yellow_caption td {padding:0px;width:11px;height:35px;background: url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/yellow_head.png) no-repeat;font-size:1px;}
+.yellow_caption .rbc_l {background-position: -11px 0;}
+.yellow_caption .rbc_r {background-position: 0 0px;}
+.yellow_caption h1 {font-size:18px;font-weight:normal;margin:0;color:#d9161c;line-height:16px;height:18px;padding:0;}
+
+.good_of_day	{margin:6px 0px}
+.good_of_day table	{border-collapse:collapse}
+.good_of_day table table td	{vertical-align:bottom}
+.good_of_day_head .box_name	{width:625px;padding:0px 10px 0px 11px;}
+.good_of_day_head .box_name a	{font-weight:bold;text-decoration:underline;color:#ed1c29;}
+.nba .good_of_day_head .box_name a	{font-weight:bold;text-decoration:underline;color:#ed1c29;}
+.good_of_day_head .box_description	{background:transparent url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/dots.gif) left top repeat-y;width:250px;padding:0px 10px 0px 20px;}
+.good_of_day_head span	{color:#898989}
+.good_of_day_head .plus_minus	{padding:0px;width:14px;}
+.good_of_day_head .plus_minus a	{display:block;width:14px;height:14px;background:transparent url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/plusminus.gif) left top no-repeat;text-decoration:none;}
+.nba .good_of_day_head .plus_minus a	{display:block;width:14px;height:14px;background:transparent url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/plusminus.gif) -14px top no-repeat;text-decoration:none;}
+.closed .good_of_day_head .plus_minus a	{background-position:0 0;}
+.good_of_day_content	{/*display:none;*/margin-top:3px;}
+.closed .good_of_day_content	{display:none;}
+.good_of_day_content .box_good	{width:620px;padding:20px 15px 20px 11px;vertical-align:top}
+.good_of_day_content .good_description	{float:right;width:424px;position:relative;}
+.good_of_day_content .good_img	{float:left;}
+.good_of_day_content .box_price	{background:transparent url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/dots.gif) left top repeat-y;width:280px;padding:0px 10px;}
+.good_of_day_content span	{color:#898989}
+
+.card_photo_ico {position:relative; width:180px; height:180px;}
+.card_photo_ico .deal {position:absolute; bottom:0; right:10px; background:url(http://www.mvideo.ru/newdesign/img/card_photo_ico/deal.png) no-repeat bottom right;width:126px; height:52px;}
+
+a, a:link, a:active, a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+h2, h3, h4 {font-size:11px; display:inline; font-weight:normal;}
+
+.label div	{padding:5px 0px;color:#d29400;}
+.star_yellow_block .good_of_day_content .box_price td	{vertical-align:bottom}
+
+.yellow_caption.small	{top:-12px;z-index:1000}
+.yellow_caption.small td	{height:25px;width:6px;background-image:url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/yellow_head_small.gif);}
+.yellow_caption.small th	{background-image:url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/yellow_head_small.gif);background-position:0 -25px;}
+.yellow_caption.small .rbc_l {background-position:-6px 0;}
+
+.temp1	{overflow:hidden;position:relative;z-index:900;_height:260px}
+.temp1 .cb	{border:1px solid #ffbf14;}
+.temp1 .tl,
+.temp1 .tr,
+.temp1 .bl,
+.temp1 .br
+	{display:block;position:absolute;z-index:10000;width:20px;height:20px;background:transparent url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/star_yellow_big.gif) left top no-repeat}
+.temp1 .tl	{top:0;left:0;background-position:-20px -20px;}
+.temp1 .tr	{top:0;right:0;background-position:0 -20px;}
+.temp1 .bl	{top:100%;left:0;background-position:-20px 0;margin-top:-20px;_margin-top:-23px;}
+.temp1 .br	{top:100%;right:0;background-position:0 0;margin-top:-20px;_margin-top:-23px;}
+
+.good_of_day .gray_yellow_bg {padding:0 5px 5px 5px;}
+
+/* PROGRESSBAR */
+.progressbar,
+.progressbar div	{float:left;height:14px;line-height:1px;font-size:1px;background:transparent url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/progressbar.png) 0 0 no-repeat;}
+.progressbar.progressbar_100	{height:14px;width:100px;background-position:0 -88px;}
+.progressbar.progressbar_100 div	{height:14px;background-position:0 -102px;}
+.progressbar.progressbar_120	{height:14px;width:120px;margin-left:10px;background-position:0 0;}
+.progressbar.progressbar_120 div	{height:14px;background-position:0 -14px;}
+.progressbar.progressbar_200	{height:20px;width:200px;background-position:0 -28px;}
+.progressbar.progressbar_200 div	{height:20px;background-position:0 -48px;}
+.progressbar.progressbar_200_yellow	{height:20px;width:200px;background-position:0 -28px;}
+.progressbar.progressbar_200_yellow div	{height:20px;background-position:0 -68px;}
+.progress_bg	{float:left;line-height:1px;font-size:1px;background:transparent url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/progressbar.png) 0 -116px no-repeat;padding:5px 6px;clear:both}
+
+.tprogress	{border-collapse:collapse;}
+.tprogress th	{padding:0px 6px 0px 6px;background:transparent url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/progressbar.png) right -146px no-repeat;height:30px;text-align:left;font-weight:normal}
+.tprogress .deadline	{background-position:left -146px;}
+.tprogress .deadline span	{font-size:18px;color:#000;}
+.tprogress td	{padding:5px 6px 5px 6px;}
+.tprogress.invert th	{background-position:left -146px;}
+.tprogress.invert .deadline	{background-position:right -146px;}
+
+/* NUMBERS */
+.label	{padding:5px 5px 4px 9px; background:transparent url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/label.png) left bottom no-repeat;}
+.gray_label	{background-image:url(http://www.mvideo.ru/newdesign/img/deal_of_the_day/gray_label.png);}
+
+.numbers i	{display:block;float:left;width:15px;height:22px;background:transparent url(http://www.mvideo.ru/newdesign/img/numbers.gif) 0 0 no-repeat;}
+.numbers.small i	{width:9px;height:12px;margin-right:0;}
+.numbers.label i	{width:11px;height:15px;margin-right:0;}
+.numbers .ne	{background-position: 0 30px;width:5px}
+/* черные */
+.numbers .n1	{background-position: 0px 0;}
+.numbers .n2	{background-position: -16px 0;}
+.numbers .n3	{background-position: -32px 0;}
+.numbers .n4	{background-position: -48px 0;}
+.numbers .n5	{background-position: -64px 0;}
+.numbers .n6	{background-position: -80px 0;}
+.numbers .n7	{background-position: -96px 0;}
+.numbers .n8	{background-position:-112px 0;}
+.numbers .n9	{background-position:-128px 0;}
+.numbers .n0	{background-position:-144px 0;}
+.numbers .n 	{background-position:-160px 0;width:10px}
+/* серые */
+.numbers.gray .n1	{background-position: 0px -168px;}
+.numbers.gray .n2	{background-position: -16px -168px;}
+.numbers.gray .n3	{background-position: -32px -168px;}
+.numbers.gray .n4	{background-position: -48px -168px;}
+.numbers.gray .n5	{background-position: -64px -168px;}
+.numbers.gray .n6	{background-position: -80px -168px;}
+.numbers.gray .n7	{background-position: -96px -168px;}
+.numbers.gray .n8	{background-position:-112px -168px;}
+.numbers.gray .n9	{background-position:-128px -168px;}
+.numbers.gray .n0	{background-position:-144px -168px;}
+.numbers.gray .n 	{background-position:-160px -168px;width:10px}
+/* красные */
+.numbers.red .n1	{background-position: 0px -194px;}
+.numbers.red .n2	{background-position: -16px -194px;}
+.numbers.red .n3	{background-position: -32px -194px;}
+.numbers.red .n4	{background-position: -48px -194px;}
+.numbers.red .n5	{background-position: -64px -194px;}
+.numbers.red .n6	{background-position: -80px -194px;}
+.numbers.red .n7	{background-position: -96px -194px;}
+.numbers.red .n8	{background-position:-112px -194px;}
+.numbers.red .n9	{background-position:-128px -194px;}
+.numbers.red .n0	{background-position:-144px -194px;}
+.numbers.red .n 	{background-position:-160px -194px;width:10px}
+/* черные на желтом фоне */
+.numbers.yellow_bg .n1	{background-position: 0px -112px;}
+.numbers.yellow_bg .n2	{background-position: -16px -112px;}
+.numbers.yellow_bg .n3	{background-position: -32px -112px;}
+.numbers.yellow_bg .n4	{background-position: -48px -112px;}
+.numbers.yellow_bg .n5	{background-position: -64px -112px;}
+.numbers.yellow_bg .n6	{background-position: -80px -112px;}
+.numbers.yellow_bg .n7	{background-position: -96px -112px;}
+.numbers.yellow_bg .n8	{background-position:-112px -112px;}
+.numbers.yellow_bg .n9	{background-position:-128px -112px;}
+.numbers.yellow_bg .n0	{background-position:-144px -112px;}
+.numbers.yellow_bg .n 	{background-position:-160px -112px;width:10px}
+/* красные на желтом фоне */
+.numbers.red_yellow_bg .n1	{background-position: 0px -222px;}
+.numbers.red_yellow_bg .n2	{background-position: -16px -222px;}
+.numbers.red_yellow_bg .n3	{background-position: -32px -222px;}
+.numbers.red_yellow_bg .n4	{background-position: -48px -222px;}
+.numbers.red_yellow_bg .n5	{background-position: -64px -222px;}
+.numbers.red_yellow_bg .n6	{background-position: -80px -222px;}
+.numbers.red_yellow_bg .n7	{background-position: -96px -222px;}
+.numbers.red_yellow_bg .n8	{background-position:-112px -222px;}
+.numbers.red_yellow_bg .n9	{background-position:-128px -222px;}
+.numbers.red_yellow_bg .n0	{background-position:-144px -222px;}
+.numbers.red_yellow_bg .n 	{background-position:-160px -222px;width:10px}
+/* черные ярлычек */
+.numbers.label .n1	{background-position: 0px -88px;}
+.numbers.label .n2	{background-position: -11px -88px;}
+.numbers.label .n3	{background-position: -22px -88px;}
+.numbers.label .n4	{background-position: -33px -88px;}
+.numbers.label .n5	{background-position: -44px -88px;}
+.numbers.label .n6	{background-position: -55px -88px;}
+.numbers.label .n7	{background-position: -66px -88px;}
+.numbers.label .n8	{background-position: -77px -88px;}
+.numbers.label .n9	{background-position: -88px -88px;}
+.numbers.label .n0	{background-position: -99px -88px;}
+.numbers.label .n 	{background-position:-110px -88px;width:10px}
+/* черные мелкие */
+.numbers.small .n1	{background-position: 0px -26px;}
+.numbers.small .n2	{background-position: -9px -26px;}
+.numbers.small .n3	{background-position: -18px -26px;}
+.numbers.small .n4	{background-position: -27px -26px;}
+.numbers.small .n5	{background-position: -36px -26px;}
+.numbers.small .n6	{background-position: -45px -26px;}
+.numbers.small .n7	{background-position: -54px -26px;}
+.numbers.small .n8	{background-position: -63px -26px;}
+.numbers.small .n9	{background-position: -72px -26px;}
+.numbers.small .n0	{background-position: -81px -26px;}
+.numbers.small .n 	{background-position: -90px -26px;width:10px}
+/* черные мелкие зачеркнутые */
+.numbers.small.strokeout .n1	{background-position: 0px -40px;}
+.numbers.small.strokeout .n2	{background-position: -9px -40px;}
+.numbers.small.strokeout .n3	{background-position: -18px -40px;}
+.numbers.small.strokeout .n4	{background-position: -27px -40px;}
+.numbers.small.strokeout .n5	{background-position: -36px -40px;}
+.numbers.small.strokeout .n6	{background-position: -45px -40px;}
+.numbers.small.strokeout .n7	{background-position: -54px -40px;}
+.numbers.small.strokeout .n8	{background-position: -63px -40px;}
+.numbers.small.strokeout .n9	{background-position: -72px -40px;}
+.numbers.small.strokeout .n0	{background-position: -81px -40px;}
+.numbers.small.strokeout .n 	{background-position: -90px -40px;width:10px}
+/* черные мелкие серые */
+.numbers.small.gray .n1	{background-position: 0px -56px;}
+.numbers.small.gray .n2	{background-position: -9px -56px;}
+.numbers.small.gray .n3	{background-position: -18px -56px;}
+.numbers.small.gray .n4	{background-position: -27px -56px;}
+.numbers.small.gray .n5	{background-position: -36px -56px;}
+.numbers.small.gray .n6	{background-position: -45px -56px;}
+.numbers.small.gray .n7	{background-position: -54px -56px;}
+.numbers.small.gray .n8	{background-position: -63px -56px;}
+.numbers.small.gray .n9	{background-position: -72px -56px;}
+.numbers.small.gray .n0	{background-position: -81px -56px;}
+.numbers.small.gray .n 	{background-position: -90px -56px;width:10px}
+/* черные мелкие серые зачеркнутые */
+.numbers.small.gray_strokeout .n1	{background-position: 0px -70px;}
+.numbers.small.gray_strokeout .n2	{background-position: -9px -70px;}
+.numbers.small.gray_strokeout .n3	{background-position: -18px -70px;}
+.numbers.small.gray_strokeout .n4	{background-position: -27px -70px;}
+.numbers.small.gray_strokeout .n5	{background-position: -36px -70px;}
+.numbers.small.gray_strokeout .n6	{background-position: -45px -70px;}
+.numbers.small.gray_strokeout .n7	{background-position: -54px -70px;}
+.numbers.small.gray_strokeout .n8	{background-position: -63px -70px;}
+.numbers.small.gray_strokeout .n9	{background-position: -72px -70px;}
+.numbers.small.gray_strokeout .n0	{background-position: -81px -70px;}
+.numbers.small.gray_strokeout .n 	{background-position: -90px -70px;width:10px}
+/* черные мелкие серые на желтом фоне */
+.numbers.small.gray_yellow_bg .n1	{background-position: 0px -138px;}
+.numbers.small.gray_yellow_bg .n2	{background-position: -9px -138px;}
+.numbers.small.gray_yellow_bg .n3	{background-position: -18px -138px;}
+.numbers.small.gray_yellow_bg .n4	{background-position: -27px -138px;}
+.numbers.small.gray_yellow_bg .n5	{background-position: -36px -138px;}
+.numbers.small.gray_yellow_bg .n6	{background-position: -45px -138px;}
+.numbers.small.gray_yellow_bg .n7	{background-position: -54px -138px;}
+.numbers.small.gray_yellow_bg .n8	{background-position: -63px -138px;}
+.numbers.small.gray_yellow_bg .n9	{background-position: -72px -138px;}
+.numbers.small.gray_yellow_bg .n0	{background-position: -81px -138px;}
+.numbers.small.gray_yellow_bg .n 	{background-position: -90px -138px;width:10px}
+/* черные мелкие серые на желтом фоне зачеркнутые */
+.numbers.small.gray_strokeout_yellow_bg .n1	{background-position: 0px -152px;}
+.numbers.small.gray_strokeout_yellow_bg .n2	{background-position: -9px -152px;}
+.numbers.small.gray_strokeout_yellow_bg .n3	{background-position: -18px -152px;}
+.numbers.small.gray_strokeout_yellow_bg .n4	{background-position: -27px -152px;}
+.numbers.small.gray_strokeout_yellow_bg .n5	{background-position: -36px -152px;}
+.numbers.small.gray_strokeout_yellow_bg .n6	{background-position: -45px -152px;}
+.numbers.small.gray_strokeout_yellow_bg .n7	{background-position: -54px -152px;}
+.numbers.small.gray_strokeout_yellow_bg .n8	{background-position: -63px -152px;}
+.numbers.small.gray_strokeout_yellow_bg .n9	{background-position: -72px -152px;}
+.numbers.small.gray_strokeout_yellow_bg .n0	{background-position: -81px -152px;}
+.numbers.small.gray_strokeout_yellow_bg .n 	{background-position: -90px -152px;width:10px}
+div.bcrumbs span#last
+{
+   color: #ed1c29;
+}
+
+div.bcrumbs a, div.bcrumbs a:active, div.bcrumbs a:link, div.bcrumbs a:visited
+{
+   color: #000;
+   text-decoration:underline;
+}
+
+div.bcrumbs a:hover
+{
+   color: #ed1c29;
+   text-decoration:none;
+}

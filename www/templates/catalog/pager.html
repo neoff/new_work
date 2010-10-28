@@ -1,0 +1,18 @@
+{{BEGIN data}}
+<div class="pages_list">
+  <div class="fll">
+      </div>
+  <div class="fll">
+  		{{BEGIN items}}	
+          <!-- <b>1</b>-->
+              <a href="catalog.php{{current_url}}{{url_inc}}" {{ if(is_current,'style="color:red;"')}}>{{ if(show_all, 'показать все', page)}}</a>
+        {{END}}
+  </div>
+  {{BEGIN prev_next}}
+  <div class="fll">
+      <a href="catalog.php{{current_url}}{{url_next}}" border="0" class="icon" id="icon_pg_next" {{ if(is_current,'style="color:red;"')}}>&nbsp;</a>
+      </div>
+  {{END}}
+    <div class="clear"></div>
+</div>
+{{END}}

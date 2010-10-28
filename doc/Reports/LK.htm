@@ -1,0 +1,1788 @@
+<html><head><meta http-equiv="Content-Type" content="text/html"><title>Отчет MicroOLAP Database Designer</title>
+<style> 
+hr                      {height:1px;color:#000000;}
+body                    {margin:15px 15px 70px 15px;}
+body,a,div,p,td,span    {font-family:Verdana,Tahoma,Arial,MS Sans serif;color:black;}
+/******************* Header *****************************************************/
+ .Header                {text-align:center;}
+ .HeaderTitle           {font-size:16px;font-weight:700;}
+ .HeaderDiagramName     {font-size:16px;font-weight:500;}
+ .HeaderReportDate      {font-size:10px;font-weight:500;}
+ .HeaderReportDateTitle {font-size:10px;font-weight:500;}
+ .HeaderReportDateValue {font-size:10px;font-weight:500;}
+ .HeaderContents        {font-size:16px;font-weight:700;}
+/******************* Table of Contents *************************************************/
+ .TOC                   {}
+ .TOCItem               {font-size:14px;font-weight:700;}
+a.TOCItemLink           {color:#000000;text-decoration:underline;}
+a.TOCItemLink:hover     {color:#ff0000;text-decoration:underline;}
+ .TOC1                  {}
+ .TOC1Item              {font-size:14px;font-weight:700;font-style:italic;}
+a.TOC1ItemLink          {color:#000000;text-decoration:underline;}
+a.TOC1ItemLink:hover    {color:#ff0000;text-decoration:underline;}
+ .TOC2                  {}
+ .TOC2Item              {font-size:14px;font-weight:700;font-style:italic;}
+a.TOC2ItemLink          {color:#000000;text-decoration:underline;}
+a.TOC2ItemLink:hover    {color:#ff0000;text-decoration:underline;}
+/******************* Report body *************************************************/
+.TOCItemContentHeader   {font-size:14px;font-weight:700;background-color:#FFFFCC;padding:5px 5px 5px 5px;border-bottom:1px solid black;margin-top:30px;}
+.TOC1ItemContentHeader  {font-size:14px;font-weight:700;font-style:italic;background-color:#999999;padding:5px 5px 5px 15px;color: white;margin-top:10px;}
+.TOC2ItemContentHeader  {font-size:14px;font-weight:700;font-style:italic;background-color:#999999;padding:5px 5px 5px 25px;color: white;margin-top:10px;}
+.TOC1ItemContentParent  {vertical-align:top;padding:0px 0px 0px 0px;margin-top:10px;}
+.TOC1ItemTable          {border:none;background-color:#FFFFFF;border-bottom:1px solid #000000;}
+.ModelDesc              {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.ModelAnn               {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.ImageContainer         {text-align:center;padding:4px 4px 4px 4px;margin:20px 0px 20px 0px;}
+.DescrVar               {padding:4px 10px 4px 4px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;font-weight:700;}
+.DescrVal               {padding:4px 4px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;width:100%;font-size:10px;}
+.TableDesc              {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.TableAnn               {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.RefDesc              {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.RefAnn               {margin:0;font-size:12px;font-family:courier new;font-weight:500;}
+.BasicVar               {padding:4px 10px 4px 4px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;font-weight:700;}
+.BasicVal               {padding:4px 4px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;width:100%;font-size:10px;}
+.ParamsVar              {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;}
+.ParamsVal              {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;}
+.ColumnsVar             {padding:4px 4px 4px 4px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;text-align:center;}
+.ColumnsVal             {padding:4px 4px 4px 4px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;text-align:center;}
+.IndexVar               {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;text-align:center;}
+.IndexVal               {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;text-align:center;}
+.ConstraintVar          {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;}
+.ConstraintVal          {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;}
+.RuleVar                {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;}
+.RuleVal                {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;}
+.TriggerVar                {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;}
+.TriggerVal                {padding:4px 10px 4px 10px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;}
+.RefVar                 {padding:4px 20px 4px 20px;vertical-align:top;border-bottom:1px solid #606060;font-size:10px;font-weight:700;}
+.RefVal                 {padding:4px 20px 4px 20px;vertical-align:top;border-bottom:1px solid #c0c0c0;font-size:10px;}
+</style>
+</head>
+<body><div class="Header">
+<p class="HeaderTitle">Физические данные диаграммы</p>
+<p class="HeaderDiagramName">LK</p>
+<p class="HeaderReportDate"><span class="HeaderReportDateTitle">Создан:</span> <span class="HeaderReportDateValue">27-10-2010 16:29:54</span></p>
+<p class="HeaderContents">Оглавление</p>
+</div>
+<hr>
+<a name="Top"></a><ul class="TOC">
+ <li class="TOCItem"><a class="TOCItemLink" href="#ModelInfo">1. Информация</a>
+  <ul class="TOC1">
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#BasicInfo">1.1. Основная Информация</a>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#ModelDesc">1.2. Описание Модели</a>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#ModelAnn">1.3. Аннотация Модели</a>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#ModelERD">1.4. ER Диаграмма</a>
+  </ul>
+ <li class="TOCItem"><a class="TOCItemLink" href="#Database">2. База данных</a>
+ <li class="TOCItem"><a class="TOCItemLink" href="#Domains">3. Домены</a>
+  <ul class="TOC1">
+
+  </ul>
+ <li class="TOCItem"><a class="TOCItemLink" href="#Tables">4. Таблицы</a>
+  <ul class="TOC1">
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#users">4.1 users</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#users_Columns">4.1.1 Поля</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#users_Constraints">4.1.2 Ограничения</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#users_Indexes">4.1.3 Индексы</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#users_Rules">4.1.4 Правила</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#users_Triggers">4.1.5 Триггеры</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#user_person">4.2 user_person</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_person_Columns">4.2.1 Поля</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_person_Constraints">4.2.2 Ограничения</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_person_Indexes">4.2.3 Индексы</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_person_Rules">4.2.4 Правила</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_person_Triggers">4.2.5 Триггеры</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#user_address">4.3 user_address</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_address_Columns">4.3.1 Поля</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_address_Constraints">4.3.2 Ограничения</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_address_Indexes">4.3.3 Индексы</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_address_Rules">4.3.4 Правила</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_address_Triggers">4.3.5 Триггеры</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#metro">4.4 metro</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#metro_Columns">4.4.1 Поля</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#metro_Constraints">4.4.2 Ограничения</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#metro_Indexes">4.4.3 Индексы</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#metro_Rules">4.4.4 Правила</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#metro_Triggers">4.4.5 Триггеры</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#city">4.5 city</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#city_Columns">4.5.1 Поля</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#city_Constraints">4.5.2 Ограничения</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#city_Indexes">4.5.3 Индексы</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#city_Rules">4.5.4 Правила</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#city_Triggers">4.5.5 Триггеры</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#user_yur_address">4.6 user_yur_address</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_yur_address_Columns">4.6.1 Поля</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_yur_address_Constraints">4.6.2 Ограничения</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_yur_address_Indexes">4.6.3 Индексы</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_yur_address_Rules">4.6.4 Правила</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_yur_address_Triggers">4.6.5 Триггеры</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#user_session">4.7 user_session</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_session_Columns">4.7.1 Поля</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_session_Constraints">4.7.2 Ограничения</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_session_Indexes">4.7.3 Индексы</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_session_Rules">4.7.4 Правила</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_session_Triggers">4.7.5 Триггеры</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#user_siebel">4.8 user_siebel</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_siebel_Columns">4.8.1 Поля</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_siebel_Constraints">4.8.2 Ограничения</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_siebel_Indexes">4.8.3 Индексы</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_siebel_Rules">4.8.4 Правила</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#user_siebel_Triggers">4.8.5 Триггеры</a>
+    </ul>
+   <li class="TOC1Item"><a class="TOC1ItemLink" href="#session_data">4.9 session_data</a>
+    <ul class="TOC2">
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#session_data_Columns">4.9.1 Поля</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#session_data_Constraints">4.9.2 Ограничения</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#session_data_Indexes">4.9.3 Индексы</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#session_data_Rules">4.9.4 Правила</a>
+     <li class="TOC2Item"><a class="TOC2ItemLink" href="#session_data_Triggers">4.9.5 Триггеры</a>
+    </ul>
+
+  </ul>
+	<li class="TOCItem"><a class="TOCItemLink" href="#References">5. Связи</a>
+  <ul class="TOC1">
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#Ref_user_adress_to_users">5.1 Ref_user_adress_to_users</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#Ref_user_address_to_city">5.2 Ref_user_address_to_city</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#Ref_user_address_to_metro">5.3 Ref_user_address_to_metro</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#Ref_user_person_to_users">5.4 Ref_user_person_to_users</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#Ref_user_session_to_users">5.5 Ref_user_session_to_users</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#Ref_user_person_to_user_address">5.6 Ref_user_person_to_user_address</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#Ref_user_yur_address_to_user_address">5.7 Ref_user_yur_address_to_user_address</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#Ref_user_siebel_to_user_session">5.8 Ref_user_siebel_to_user_session</a>
+<li class="TOC1Item"><a class="TOC1ItemLink" href="#Ref_user_session_to_session_data">5.9 Ref_user_session_to_session_data</a>
+
+  </ul>
+  <li class="TOCItem"><a class="TOCItemLink" href="#StoredProces">6. Хранимые процедуры</a>
+  <ul class="TOC1">
+
+  </ul>
+  <li class="TOCItem"><a class="TOCItemLink" href="#Views">7. Представления</a>
+  <ul class="TOC1">
+
+  </ul>
+</ul><a name="ModelInfo"></a>
+<div class="TOCItemContentHeader">1. Информация</div>
+<a name="BasicInfo"></a>
+<div class="TOC1ItemContentHeader">1.1. Основная Информация</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+	 <tr><td class="BasicVar" nowrap>Проект</td><td class="BasicVal">Личный кабинет на сайте</td></tr>
+	 <tr><td class="BasicVar" nowrap>Модель</td><td class="BasicVal">LK</td></tr>
+	 <tr><td class="BasicVar" nowrap>Компания</td><td class="BasicVal">mvideo </td></tr>
+	 <tr><td class="BasicVar" nowrap>Автор</td><td class="BasicVal">enesterov</td></tr>
+	 <tr><td class="BasicVar" nowrap>Версия</td><td class="BasicVal">1</td></tr>
+	 <tr><td class="BasicVar" nowrap>Создано</td><td class="BasicVal">27-10-2010 11:42:43</td></tr>
+	 <tr><td class="BasicVar" nowrap>Модифицировано</td><td class="BasicVal">27-10-2010 16:29:27</td></tr>
+	</table>
+</div>
+
+<a name="ModelDesc"></a>
+<div class="TOC1ItemContentHeader">1.2. Описание Модели</div>
+<div class="TOC1ItemContentParent"><PRE class="ModelDesc"></PRE></div>
+
+<a name="ModelAnn"></a>
+<div class="TOC1ItemContentHeader">1.3. Аннотация Модели</div>
+<div class="TOC1ItemContentParent"><PRE class="ModelAnn"></PRE></div>
+
+<a name="ModelERD"></a>
+<div class="TOC1ItemContentHeader">1.4. ER Диаграмма</div>
+<div class="ImageContainer"><img src="LK.png" alt="LK"></div>
+
+<a name="Database"></a>
+<div class="TOCItemContentHeader">2. База данных</div>
+
+<a name="<%Database%>"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+	 <tr><td class="BasicVar" nowrap>Название</td><td class="BasicVal">Database_1</td></tr>
+	 <tr><td class="BasicVar" nowrap>Кодировка</td><td class="BasicVal">&nbsp;</td></tr>
+	 <tr><td class="BasicVar" nowrap>Шаблон</td><td class="BasicVal">&nbsp;</td></tr>
+	 <tr><td class="BasicVar" nowrap>Табличная область</td><td class="BasicVal">&nbsp;</td></tr>
+	 <tr><td class="BasicVar" nowrap>Комментарий</td><td class="BasicVal">&nbsp;</td></tr>
+   <tr><td class="DescrVar" nowrap>Скрипт создания</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE DATABASE "Database_1";
+
+</PRE></td></tr>
+	</table>
+</div>
+
+
+
+<a name="Domains"></a>
+<div class="TOCItemContentHeader">3 Домены</div>
+
+
+<a name="Tables"></a>
+<div class="TOCItemContentHeader">4. Таблицы</div>
+<a name="users"></a>
+<div class="TOC1ItemContentHeader">4.1 users</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Комментарий</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Владелец</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Временная</td><td class="ParamsVar" nowrap>Присутствуют OID</td><td class="ParamsVar" nowrap>Фактор Заполнения</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">-</td><td class="ColumnsVal">0</td></tr>
+ </table>
+</div>
+
+<a name="users_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Тип Данных</td>
+   <td class="ColumnsVar" nowrap>Первичный Ключ</td>
+   <td class="ColumnsVar" nowrap>Не Null</td>
+   <td class="ColumnsVar" nowrap>Авто Увеличение</td>
+   <td class="ColumnsVar" nowrap>Флаги</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Значение по-умолчанию</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">email</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(100)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">password</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(100)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+<a name="users_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Индексы</td>
+  <td class="IndexVar" nowrap>Уникальность</td>
+  <td class="IndexVar" nowrap>Поля</td>
+  <td class="IndexVar" nowrap>Метод</td>
+  <td class="IndexVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">_idx_pk</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">id</td>
+<td class="IndexVal" nowrap style="text-align:left"></td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="users_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Ограничения</td>
+<td class="ConstraintVar" nowrap>Тип</td>
+<td class="ConstraintVar" nowrap>Выражение</td>
+<td class="ConstraintVar" nowrap>Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>id</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="users_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Правила</td><td class="RuleVar" nowrap>Тип</td><td class="RuleVar" nowrap>Вместо</td><td class="RuleVar" nowrap>Выражение</td><td class="RuleVar" nowrap>Тело</td><td class="RuleVar" nowrap>Комментарий</td></tr>
+
+ </table>
+</div>
+
+<a name="users_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Триггеры</td><td class="TriggerVar">Время</td><td class="TriggerVar">Процедура</td><td class="TriggerVar">События</td><td class="TriggerVar">Для каждой строки</td><td class="TriggerVar">Комментарий</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Скрипт создания</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "users" (
+	"id" SERIAL NOT NULL,
+	"email" varchar(100) NOT NULL,
+	"password" varchar(100),
+  PRIMARY KEY("id")
+);
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="user_person"></a>
+<div class="TOC1ItemContentHeader">4.2 user_person</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Комментарий</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Владелец</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Временная</td><td class="ParamsVar" nowrap>Присутствуют OID</td><td class="ParamsVar" nowrap>Фактор Заполнения</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">-</td><td class="ColumnsVal">0</td></tr>
+ </table>
+</div>
+
+<a name="user_person_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Тип Данных</td>
+   <td class="ColumnsVar" nowrap>Первичный Ключ</td>
+   <td class="ColumnsVar" nowrap>Не Null</td>
+   <td class="ColumnsVar" nowrap>Авто Увеличение</td>
+   <td class="ColumnsVar" nowrap>Флаги</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Значение по-умолчанию</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">default_addtess</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">адреса по умолчанию может и не быть</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">first_name</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(100)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">midle_name</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(100)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">last_name</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(100)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">phone</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">mobile</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+<a name="user_person_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Индексы</td>
+  <td class="IndexVar" nowrap>Уникальность</td>
+  <td class="IndexVar" nowrap>Поля</td>
+  <td class="IndexVar" nowrap>Метод</td>
+  <td class="IndexVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">_idx_pk</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">id</td>
+<td class="IndexVal" nowrap style="text-align:left"></td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="user_person_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Ограничения</td>
+<td class="ConstraintVar" nowrap>Тип</td>
+<td class="ConstraintVar" nowrap>Выражение</td>
+<td class="ConstraintVar" nowrap>Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>id</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="user_person_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Правила</td><td class="RuleVar" nowrap>Тип</td><td class="RuleVar" nowrap>Вместо</td><td class="RuleVar" nowrap>Выражение</td><td class="RuleVar" nowrap>Тело</td><td class="RuleVar" nowrap>Комментарий</td></tr>
+
+ </table>
+</div>
+
+<a name="user_person_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Триггеры</td><td class="TriggerVar">Время</td><td class="TriggerVar">Процедура</td><td class="TriggerVar">События</td><td class="TriggerVar">Для каждой строки</td><td class="TriggerVar">Комментарий</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Скрипт создания</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "user_person" (
+	"id" int4 NOT NULL,
+	"default_addtess" int4,
+	"first_name" varchar(100),
+	"midle_name" varchar(100),
+	"last_name" varchar(100),
+	"phone" int4,
+	"mobile" int4,
+  PRIMARY KEY("id"),
+  CONSTRAINT "Ref_user_person_to_users" FOREIGN KEY ("id")
+    REFERENCES "users"("id")
+	MATCH SIMPLE
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+	NOT DEFERRABLE,
+  CONSTRAINT "Ref_user_person_to_user_address" FOREIGN KEY ("default_addtess")
+    REFERENCES "user_address"("id")
+	MATCH SIMPLE
+	ON DELETE SET NULL
+	ON UPDATE CASCADE
+	NOT DEFERRABLE
+);
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="user_address"></a>
+<div class="TOC1ItemContentHeader">4.3 user_address</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Комментарий</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Владелец</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Временная</td><td class="ParamsVar" nowrap>Присутствуют OID</td><td class="ParamsVar" nowrap>Фактор Заполнения</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">-</td><td class="ColumnsVal">0</td></tr>
+ </table>
+</div>
+
+<a name="user_address_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Тип Данных</td>
+   <td class="ColumnsVar" nowrap>Первичный Ключ</td>
+   <td class="ColumnsVar" nowrap>Не Null</td>
+   <td class="ColumnsVar" nowrap>Авто Увеличение</td>
+   <td class="ColumnsVar" nowrap>Флаги</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Значение по-умолчанию</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">city</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">metro</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">street</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">house</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">apartment</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">phone</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">sort</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+<a name="user_address_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Индексы</td>
+  <td class="IndexVar" nowrap>Уникальность</td>
+  <td class="IndexVar" nowrap>Поля</td>
+  <td class="IndexVar" nowrap>Метод</td>
+  <td class="IndexVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">_idx_pk</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">id</td>
+<td class="IndexVal" nowrap style="text-align:left"></td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="user_address_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Ограничения</td>
+<td class="ConstraintVar" nowrap>Тип</td>
+<td class="ConstraintVar" nowrap>Выражение</td>
+<td class="ConstraintVar" nowrap>Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>id</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="user_address_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Правила</td><td class="RuleVar" nowrap>Тип</td><td class="RuleVar" nowrap>Вместо</td><td class="RuleVar" nowrap>Выражение</td><td class="RuleVar" nowrap>Тело</td><td class="RuleVar" nowrap>Комментарий</td></tr>
+
+ </table>
+</div>
+
+<a name="user_address_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Триггеры</td><td class="TriggerVar">Время</td><td class="TriggerVar">Процедура</td><td class="TriggerVar">События</td><td class="TriggerVar">Для каждой строки</td><td class="TriggerVar">Комментарий</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Скрипт создания</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "user_address" (
+	"id" int4 NOT NULL,
+	"city" int4 NOT NULL,
+	"metro" int4 NOT NULL,
+	"street" varchar,
+	"house" varchar,
+	"apartment" varchar,
+	"phone" int4,
+	"sort" int4,
+  PRIMARY KEY("id"),
+  CONSTRAINT "Ref_user_adress_to_users" FOREIGN KEY ("id")
+    REFERENCES "users"("id")
+	MATCH SIMPLE
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+	NOT DEFERRABLE,
+  CONSTRAINT "Ref_user_address_to_city" FOREIGN KEY ("city")
+    REFERENCES "city"("id")
+	MATCH SIMPLE
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+	NOT DEFERRABLE,
+  CONSTRAINT "Ref_user_address_to_metro" FOREIGN KEY ("metro")
+    REFERENCES "metro"("id")
+	MATCH SIMPLE
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+	NOT DEFERRABLE
+);
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="metro"></a>
+<div class="TOC1ItemContentHeader">4.4 metro</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Комментарий</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Владелец</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Временная</td><td class="ParamsVar" nowrap>Присутствуют OID</td><td class="ParamsVar" nowrap>Фактор Заполнения</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">-</td><td class="ColumnsVal">0</td></tr>
+ </table>
+</div>
+
+<a name="metro_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Тип Данных</td>
+   <td class="ColumnsVar" nowrap>Первичный Ключ</td>
+   <td class="ColumnsVar" nowrap>Не Null</td>
+   <td class="ColumnsVar" nowrap>Авто Увеличение</td>
+   <td class="ColumnsVar" nowrap>Флаги</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Значение по-умолчанию</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">name</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(100)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">delivery</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+<a name="metro_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Индексы</td>
+  <td class="IndexVar" nowrap>Уникальность</td>
+  <td class="IndexVar" nowrap>Поля</td>
+  <td class="IndexVar" nowrap>Метод</td>
+  <td class="IndexVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">_idx_pk</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">id</td>
+<td class="IndexVal" nowrap style="text-align:left"></td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="metro_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Ограничения</td>
+<td class="ConstraintVar" nowrap>Тип</td>
+<td class="ConstraintVar" nowrap>Выражение</td>
+<td class="ConstraintVar" nowrap>Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>id</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="metro_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Правила</td><td class="RuleVar" nowrap>Тип</td><td class="RuleVar" nowrap>Вместо</td><td class="RuleVar" nowrap>Выражение</td><td class="RuleVar" nowrap>Тело</td><td class="RuleVar" nowrap>Комментарий</td></tr>
+
+ </table>
+</div>
+
+<a name="metro_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Триггеры</td><td class="TriggerVar">Время</td><td class="TriggerVar">Процедура</td><td class="TriggerVar">События</td><td class="TriggerVar">Для каждой строки</td><td class="TriggerVar">Комментарий</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Скрипт создания</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "metro" (
+	"id" int4 NOT NULL,
+	"name" varchar(100) NOT NULL,
+	"delivery" int4,
+  PRIMARY KEY("id")
+);
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="city"></a>
+<div class="TOC1ItemContentHeader">4.5 city</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Комментарий</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Владелец</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Временная</td><td class="ParamsVar" nowrap>Присутствуют OID</td><td class="ParamsVar" nowrap>Фактор Заполнения</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">-</td><td class="ColumnsVal">0</td></tr>
+ </table>
+</div>
+
+<a name="city_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Тип Данных</td>
+   <td class="ColumnsVar" nowrap>Первичный Ключ</td>
+   <td class="ColumnsVar" nowrap>Не Null</td>
+   <td class="ColumnsVar" nowrap>Авто Увеличение</td>
+   <td class="ColumnsVar" nowrap>Флаги</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Значение по-умолчанию</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">name</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(100)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">delivery</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+<a name="city_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Индексы</td>
+  <td class="IndexVar" nowrap>Уникальность</td>
+  <td class="IndexVar" nowrap>Поля</td>
+  <td class="IndexVar" nowrap>Метод</td>
+  <td class="IndexVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">_idx_pk</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">id</td>
+<td class="IndexVal" nowrap style="text-align:left"></td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="city_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Ограничения</td>
+<td class="ConstraintVar" nowrap>Тип</td>
+<td class="ConstraintVar" nowrap>Выражение</td>
+<td class="ConstraintVar" nowrap>Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>id</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="city_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Правила</td><td class="RuleVar" nowrap>Тип</td><td class="RuleVar" nowrap>Вместо</td><td class="RuleVar" nowrap>Выражение</td><td class="RuleVar" nowrap>Тело</td><td class="RuleVar" nowrap>Комментарий</td></tr>
+
+ </table>
+</div>
+
+<a name="city_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Триггеры</td><td class="TriggerVar">Время</td><td class="TriggerVar">Процедура</td><td class="TriggerVar">События</td><td class="TriggerVar">Для каждой строки</td><td class="TriggerVar">Комментарий</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Скрипт создания</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "city" (
+	"id" int4 NOT NULL,
+	"name" varchar(100) NOT NULL,
+	"delivery" int4,
+  PRIMARY KEY("id")
+);
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="user_yur_address"></a>
+<div class="TOC1ItemContentHeader">4.6 user_yur_address</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Комментарий</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Владелец</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Временная</td><td class="ParamsVar" nowrap>Присутствуют OID</td><td class="ParamsVar" nowrap>Фактор Заполнения</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">-</td><td class="ColumnsVal">0</td></tr>
+ </table>
+</div>
+
+<a name="user_yur_address_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Тип Данных</td>
+   <td class="ColumnsVar" nowrap>Первичный Ключ</td>
+   <td class="ColumnsVar" nowrap>Не Null</td>
+   <td class="ColumnsVar" nowrap>Авто Увеличение</td>
+   <td class="ColumnsVar" nowrap>Флаги</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Значение по-умолчанию</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">name</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(255)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">bic</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">inn</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+<a name="user_yur_address_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Индексы</td>
+  <td class="IndexVar" nowrap>Уникальность</td>
+  <td class="IndexVar" nowrap>Поля</td>
+  <td class="IndexVar" nowrap>Метод</td>
+  <td class="IndexVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">_idx_pk</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">id</td>
+<td class="IndexVal" nowrap style="text-align:left"></td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="user_yur_address_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Ограничения</td>
+<td class="ConstraintVar" nowrap>Тип</td>
+<td class="ConstraintVar" nowrap>Выражение</td>
+<td class="ConstraintVar" nowrap>Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>id</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="user_yur_address_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Правила</td><td class="RuleVar" nowrap>Тип</td><td class="RuleVar" nowrap>Вместо</td><td class="RuleVar" nowrap>Выражение</td><td class="RuleVar" nowrap>Тело</td><td class="RuleVar" nowrap>Комментарий</td></tr>
+
+ </table>
+</div>
+
+<a name="user_yur_address_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Триггеры</td><td class="TriggerVar">Время</td><td class="TriggerVar">Процедура</td><td class="TriggerVar">События</td><td class="TriggerVar">Для каждой строки</td><td class="TriggerVar">Комментарий</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Скрипт создания</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "user_yur_address" (
+	"id" int4 NOT NULL,
+	"name" varchar(255),
+	"bic" int4,
+	"inn" int4,
+  PRIMARY KEY("id"),
+  CONSTRAINT "Ref_user_yur_address_to_user_address" FOREIGN KEY ("id")
+    REFERENCES "user_address"("id")
+	MATCH SIMPLE
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+	NOT DEFERRABLE
+)
+INHERITS ("user_address");
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="user_session"></a>
+<div class="TOC1ItemContentHeader">4.7 user_session</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Комментарий</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Владелец</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Временная</td><td class="ParamsVar" nowrap>Присутствуют OID</td><td class="ParamsVar" nowrap>Фактор Заполнения</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">-</td><td class="ColumnsVal">0</td></tr>
+ </table>
+</div>
+
+<a name="user_session_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Тип Данных</td>
+   <td class="ColumnsVar" nowrap>Первичный Ключ</td>
+   <td class="ColumnsVar" nowrap>Не Null</td>
+   <td class="ColumnsVar" nowrap>Авто Увеличение</td>
+   <td class="ColumnsVar" nowrap>Флаги</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Значение по-умолчанию</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">session_data_id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">name</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">varchar(50)</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+<a name="user_session_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Индексы</td>
+  <td class="IndexVar" nowrap>Уникальность</td>
+  <td class="IndexVar" nowrap>Поля</td>
+  <td class="IndexVar" nowrap>Метод</td>
+  <td class="IndexVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">_idx_pk</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">id</td>
+<td class="IndexVal" nowrap style="text-align:left"></td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="user_session_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Ограничения</td>
+<td class="ConstraintVar" nowrap>Тип</td>
+<td class="ConstraintVar" nowrap>Выражение</td>
+<td class="ConstraintVar" nowrap>Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>id</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="user_session_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Правила</td><td class="RuleVar" nowrap>Тип</td><td class="RuleVar" nowrap>Вместо</td><td class="RuleVar" nowrap>Выражение</td><td class="RuleVar" nowrap>Тело</td><td class="RuleVar" nowrap>Комментарий</td></tr>
+
+ </table>
+</div>
+
+<a name="user_session_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Триггеры</td><td class="TriggerVar">Время</td><td class="TriggerVar">Процедура</td><td class="TriggerVar">События</td><td class="TriggerVar">Для каждой строки</td><td class="TriggerVar">Комментарий</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Скрипт создания</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "user_session" (
+	"id" int4 NOT NULL,
+	"session_data_id" int4,
+	"name" varchar(50) NOT NULL,
+  PRIMARY KEY("id"),
+  CONSTRAINT "Ref_user_session_to_users" FOREIGN KEY ("id")
+    REFERENCES "users"("id")
+	MATCH SIMPLE
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+	NOT DEFERRABLE,
+  CONSTRAINT "Ref_user_session_to_session_data" FOREIGN KEY ("session_data_id")
+    REFERENCES "session_data"("id")
+	MATCH SIMPLE
+	ON DELETE CASCADE
+	ON UPDATE CASCADE
+	NOT DEFERRABLE
+);
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="user_siebel"></a>
+<div class="TOC1ItemContentHeader">4.8 user_siebel</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Комментарий</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Владелец</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Временная</td><td class="ParamsVar" nowrap>Присутствуют OID</td><td class="ParamsVar" nowrap>Фактор Заполнения</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">-</td><td class="ColumnsVal">0</td></tr>
+ </table>
+</div>
+
+<a name="user_siebel_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Тип Данных</td>
+   <td class="ColumnsVar" nowrap>Первичный Ключ</td>
+   <td class="ColumnsVar" nowrap>Не Null</td>
+   <td class="ColumnsVar" nowrap>Авто Увеличение</td>
+   <td class="ColumnsVar" nowrap>Флаги</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Значение по-умолчанию</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">session_id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">siebel_id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+<a name="user_siebel_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Индексы</td>
+  <td class="IndexVar" nowrap>Уникальность</td>
+  <td class="IndexVar" nowrap>Поля</td>
+  <td class="IndexVar" nowrap>Метод</td>
+  <td class="IndexVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">_idx_pk</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">id</td>
+<td class="IndexVal" nowrap style="text-align:left"></td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="user_siebel_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Ограничения</td>
+<td class="ConstraintVar" nowrap>Тип</td>
+<td class="ConstraintVar" nowrap>Выражение</td>
+<td class="ConstraintVar" nowrap>Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>id</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="user_siebel_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Правила</td><td class="RuleVar" nowrap>Тип</td><td class="RuleVar" nowrap>Вместо</td><td class="RuleVar" nowrap>Выражение</td><td class="RuleVar" nowrap>Тело</td><td class="RuleVar" nowrap>Комментарий</td></tr>
+
+ </table>
+</div>
+
+<a name="user_siebel_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Триггеры</td><td class="TriggerVar">Время</td><td class="TriggerVar">Процедура</td><td class="TriggerVar">События</td><td class="TriggerVar">Для каждой строки</td><td class="TriggerVar">Комментарий</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Скрипт создания</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "user_siebel" (
+	"id" SERIAL NOT NULL,
+	"session_id" int4,
+	"siebel_id" int4 NOT NULL,
+  PRIMARY KEY("id"),
+  CONSTRAINT "Ref_user_siebel_to_user_session" FOREIGN KEY ("session_id")
+    REFERENCES "user_session"("id")
+	MATCH SIMPLE
+	ON DELETE SET NULL
+	ON UPDATE CASCADE
+	NOT DEFERRABLE
+);
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+<a name="session_data"></a>
+<div class="TOC1ItemContentHeader">4.9 session_data</div>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Комментарий</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Владелец</td><td class="DescrVal" style="width:100%;"><PRE class="TableDesc">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="ParamsVar" nowrap>Временная</td><td class="ParamsVar" nowrap>Присутствуют OID</td><td class="ParamsVar" nowrap>Фактор Заполнения</td></tr>
+  <tr><td class="ColumnsVal">-</td><td class="ColumnsVal">-</td><td class="ColumnsVal">0</td></tr>
+ </table>
+</div>
+
+<a name="session_data_Columns"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr>
+   <td class="ColumnsVar" nowrap style="text-align:left">Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Тип Данных</td>
+   <td class="ColumnsVar" nowrap>Первичный Ключ</td>
+   <td class="ColumnsVar" nowrap>Не Null</td>
+   <td class="ColumnsVar" nowrap>Авто Увеличение</td>
+   <td class="ColumnsVar" nowrap>Флаги</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Значение по-умолчанию</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+  </tr>
+  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">id</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">int4</td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap><big>&#10004;</big></td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>  <tr>
+   <td class="ColumnsVal" nowrap style="text-align:left">data</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">text</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>-</td>
+   <td class="ColumnsVal" nowrap>&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+   <td class="ColumnsVal" nowrap style="text-align:left">&nbsp;</td>
+  </tr>
+ </table>
+</div>
+
+<a name="session_data_Indexes"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="IndexVar">Индексы</td>
+  <td class="IndexVar" nowrap>Уникальность</td>
+  <td class="IndexVar" nowrap>Поля</td>
+  <td class="IndexVar" nowrap>Метод</td>
+  <td class="IndexVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+<tr><td class="IndexVal" nowrap style="text-align:left">_idx_pk</td>
+<td class="IndexVal" nowrap><big>&#10004;</big></td>
+<td class="IndexVal" nowrap style="text-align:left">id</td>
+<td class="IndexVal" nowrap style="text-align:left"></td>
+<td class="IndexVal" nowrap style="text-align:left">&nbsp;</td>
+</tr>
+ </table>
+</div>
+
+<a name="session_data_Constraints"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="ConstraintVar" nowrap>Ограничения</td>
+<td class="ConstraintVar" nowrap>Тип</td>
+<td class="ConstraintVar" nowrap>Выражение</td>
+<td class="ConstraintVar" nowrap>Поля</td>
+   <td class="ColumnsVar" nowrap style="text-align:left">Комментарий</td>
+</tr>
+  <tr>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>PRIMARY KEY</td>
+<td class="ConstraintVal" nowrap>&nbsp;</td>
+<td class="ConstraintVal" nowrap>id</td>
+<td class="ConstraintVal">&nbsp;</td></tr>
+ </table>
+</div>
+
+<a name="session_data_Rules"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="RuleVar" nowrap>Правила</td><td class="RuleVar" nowrap>Тип</td><td class="RuleVar" nowrap>Вместо</td><td class="RuleVar" nowrap>Выражение</td><td class="RuleVar" nowrap>Тело</td><td class="RuleVar" nowrap>Комментарий</td></tr>
+
+ </table>
+</div>
+
+<a name="session_data_Triggers"></a>
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0" style="width:100%;">
+  <tr><td class="TriggerVar">Триггеры</td><td class="TriggerVar">Время</td><td class="TriggerVar">Процедура</td><td class="TriggerVar">События</td><td class="TriggerVar">Для каждой строки</td><td class="TriggerVar">Комментарий</td></tr>
+
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Скрипт создания</td><td class="DescrVal" style="width:100%;"><PRE class="TableAnn">CREATE TABLE "session_data" (
+	"id" SERIAL NOT NULL,
+	"data" text,
+  PRIMARY KEY("id")
+);
+</PRE></td></tr>
+ </table>
+</div>
+</div>
+
+
+<a name="References"></a>
+<div class="TOCItemContentHeader">5. Связи</div>
+<a name="Ref_user_adress_to_users"></a>
+<div class="TOC1ItemContentHeader">5.1 Ref_user_adress_to_users</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Главная таблица</td>
+   <td class="RefVar" nowrap>Подчиненная таблица</td>
+   <td class="RefVar" nowrap>При Удалении</td>
+   <td class="RefVar" nowrap>При Обновлении</td>
+   <td class="RefVar" nowrap style="width:100%">Связи</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>users</td>
+   <td class="RefVal" nowrap>user_address</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>id=id
+</td>
+  </tr>
+ </table>
+</div>
+<a name="Ref_user_address_to_city"></a>
+<div class="TOC1ItemContentHeader">5.2 Ref_user_address_to_city</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Главная таблица</td>
+   <td class="RefVar" nowrap>Подчиненная таблица</td>
+   <td class="RefVar" nowrap>При Удалении</td>
+   <td class="RefVar" nowrap>При Обновлении</td>
+   <td class="RefVar" nowrap style="width:100%">Связи</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>city</td>
+   <td class="RefVal" nowrap>user_address</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>id=city
+</td>
+  </tr>
+ </table>
+</div>
+<a name="Ref_user_address_to_metro"></a>
+<div class="TOC1ItemContentHeader">5.3 Ref_user_address_to_metro</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Главная таблица</td>
+   <td class="RefVar" nowrap>Подчиненная таблица</td>
+   <td class="RefVar" nowrap>При Удалении</td>
+   <td class="RefVar" nowrap>При Обновлении</td>
+   <td class="RefVar" nowrap style="width:100%">Связи</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>metro</td>
+   <td class="RefVal" nowrap>user_address</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>id=metro
+</td>
+  </tr>
+ </table>
+</div>
+<a name="Ref_user_person_to_users"></a>
+<div class="TOC1ItemContentHeader">5.4 Ref_user_person_to_users</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Главная таблица</td>
+   <td class="RefVar" nowrap>Подчиненная таблица</td>
+   <td class="RefVar" nowrap>При Удалении</td>
+   <td class="RefVar" nowrap>При Обновлении</td>
+   <td class="RefVar" nowrap style="width:100%">Связи</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>users</td>
+   <td class="RefVal" nowrap>user_person</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>id=id
+</td>
+  </tr>
+ </table>
+</div>
+<a name="Ref_user_session_to_users"></a>
+<div class="TOC1ItemContentHeader">5.5 Ref_user_session_to_users</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Главная таблица</td>
+   <td class="RefVar" nowrap>Подчиненная таблица</td>
+   <td class="RefVar" nowrap>При Удалении</td>
+   <td class="RefVar" nowrap>При Обновлении</td>
+   <td class="RefVar" nowrap style="width:100%">Связи</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>users</td>
+   <td class="RefVal" nowrap>user_session</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>id=id
+</td>
+  </tr>
+ </table>
+</div>
+<a name="Ref_user_person_to_user_address"></a>
+<div class="TOC1ItemContentHeader">5.6 Ref_user_person_to_user_address</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Главная таблица</td>
+   <td class="RefVar" nowrap>Подчиненная таблица</td>
+   <td class="RefVar" nowrap>При Удалении</td>
+   <td class="RefVar" nowrap>При Обновлении</td>
+   <td class="RefVar" nowrap style="width:100%">Связи</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>user_address</td>
+   <td class="RefVal" nowrap>user_person</td>
+   <td class="RefVal" nowrap>SET NULL</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>id=default_addtess
+</td>
+  </tr>
+ </table>
+</div>
+<a name="Ref_user_yur_address_to_user_address"></a>
+<div class="TOC1ItemContentHeader">5.7 Ref_user_yur_address_to_user_address</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Главная таблица</td>
+   <td class="RefVar" nowrap>Подчиненная таблица</td>
+   <td class="RefVar" nowrap>При Удалении</td>
+   <td class="RefVar" nowrap>При Обновлении</td>
+   <td class="RefVar" nowrap style="width:100%">Связи</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>user_address</td>
+   <td class="RefVal" nowrap>user_yur_address</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>id=id
+</td>
+  </tr>
+ </table>
+</div>
+<a name="Ref_user_siebel_to_user_session"></a>
+<div class="TOC1ItemContentHeader">5.8 Ref_user_siebel_to_user_session</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Главная таблица</td>
+   <td class="RefVar" nowrap>Подчиненная таблица</td>
+   <td class="RefVar" nowrap>При Удалении</td>
+   <td class="RefVar" nowrap>При Обновлении</td>
+   <td class="RefVar" nowrap style="width:100%">Связи</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>user_session</td>
+   <td class="RefVal" nowrap>user_siebel</td>
+   <td class="RefVal" nowrap>SET NULL</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>id=session_id
+</td>
+  </tr>
+ </table>
+</div>
+<a name="Ref_user_session_to_session_data"></a>
+<div class="TOC1ItemContentHeader">5.9 Ref_user_session_to_session_data</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr><td class="DescrVar" nowrap>Описание</td><td class="DescrVal" style="width:100%;"><PRE class="RefDesc">&nbsp;</PRE></td></tr>
+  <tr><td class="DescrVar" nowrap>Аннотация</td><td class="DescrVal" style="width:100%;"><PRE class="RefAnn">&nbsp;</PRE></td></tr>
+ </table>
+</div>
+
+<div class="TOC1ItemContentParent">
+	<table class="TOC1ItemTable" cellpadding="0" cellspacing="0">
+  <tr>
+   <td class="RefVar" nowrap>Главная таблица</td>
+   <td class="RefVar" nowrap>Подчиненная таблица</td>
+   <td class="RefVar" nowrap>При Удалении</td>
+   <td class="RefVar" nowrap>При Обновлении</td>
+   <td class="RefVar" nowrap style="width:100%">Связи</td>
+  </tr>
+  <tr>
+   <td class="RefVal" nowrap>session_data</td>
+   <td class="RefVal" nowrap>user_session</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>CASCADE</td>
+   <td class="RefVal" nowrap>id=session_data_id
+</td>
+  </tr>
+ </table>
+</div>
+
+
+<a name="StoredProces"></a>
+<div class="TOCItemContentHeader">6. Хранимые процедуры</div>
+
+
+<a name="Views"></a>
+<div class="TOCItemContentHeader">7. Представления</div>
+</body></html>

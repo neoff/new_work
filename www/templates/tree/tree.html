@@ -1,0 +1,61 @@
+<!-- begin main menu -->
+<div class="mvideo_container white">
+	<div class="mvideo_content relative"  style="z-index:3">
+		<table id="topm">
+			<tr>
+				<td id="first" class="corner">&nbsp;</td>
+			{{BEGIN tree}}
+				{{BEGIN tree_items}}
+				<td {{ if($last_node, 'id="ending"','') }} valign="top" onmouseover="{{ if(not_have_subs,'return false; ') }}sub_menu({{tree_id}},0);" onmouseout="{{ if(not_have_subs,'return false; ') }}sub_menu({{tree_id}},1);"><div id="topm{{tree_id}}"><a href="{{$site}}/catalog.php?node={{tree_id}}" onClick="JavaScript: return false;">{{tree_name}}</a></div></td>
+				{{END}}
+			{{END}}
+				<td id="promo"><a href="{{site}}/barhatny-sezon/?ref=barhatny_sezon_nav_bar" title="Бархатный сезон">Бархатный сезон</a></td>
+			</tr>
+		</table>
+	{{BEGIN tree}}
+		{{BEGIN tree_items}}
+		<div id="subm{{tree_id}}" class="subm_item" style="width:{{width}}px;" align="center" onmouseover="sub_menu({{tree_id}},0);" onmouseout="sub_menu({{tree_id}},1);">
+		<div class="subm_rb">
+		<div class="scontent">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+				<tr>
+					<td valign="top" align="left" style="min-width:200px;">
+					 <ul>
+					{{BEGIN childs}}
+						<li><nobr><a href="/catalog.php?node={{tree_id}}&group={{ if($is_group,$tree_group) }}" {{ if($is_group,'class="b62831"') }}> {{ if($is_group,'<b>') }}{{tree_name}}{{ if($is_group,'</b>') }}</a></nobr></li>
+						{{ if($is_end_col,$tree_separator) }}
+					{{END}}
+					 </ul>
+					</td>
+				</tr>
+			</table>
+			<!--[if IE]><iframe></iframe><![endif]-->
+		 </div>
+		 <div class="sb"><div class="h"></div><div class="sl"></div><div class="sr"></div></div>
+		</div>
+	</div>
+	{{END}}
+{{END}}
+		<div style="position: absolute; visibility: hidden;">
+
+<!--  AdRiver code START. Type:ZeroPixel Site: Mvideo10 SZ: Main PZ: 0 BN: 0 -->
+<script language="javascript" type="text/javascript"><!--
+var RndNum4NoCash = Math.round(Math.random() * 1000000000);
+var ar_Tail='unknown'; if (document.referrer) ar_Tail = escape(document.referrer);
+document.write('<img src="http://ad.adriver.ru/cgi-bin/rle.cgi?' + 'sid=148720&amp;sz=Main&amp;bt=21&amp;pz=0&amp;rnd=' + RndNum4NoCash + '&amp;tail256=' + ar_Tail + '" alt="" width="1" height="1"/>')
+//--></script>
+<noscript><img alt="" src="http://ad.adriver.ru/cgi-bin/rle.cgi?sid=148720&amp;sz=Main&amp;bt=21&amp;pz=0&amp;rnd=1047362602" width="1" height="1"/></noscript><!--  AdRiver code END  -->
+
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<img src='http://counter.yadro.ru/hit?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' width=\"1\" height=\"1\" alt=\"\"/>")//--></script><!--/LiveInternet-->
+
+
+  </div>
+
+</div>
+<!-- end main menu -->

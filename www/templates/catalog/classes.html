@@ -1,0 +1,206 @@
+{{header}}
+{{BEGIN data}}
+<script type="text/javascript" src="http://www.mvideo.ru/newdesign/js/jquery/jquery.min.js"></script>
+   <script type="text/javascript" src="http://www.mvideo.ru/newdesign/js/jquery/jquery.blockUI.js?v2.31"></script>
+
+<div style="width:100%;">
+<div style="height:30px;padding:7px 0 0 5px;">
+  <div id="bcrumbs">
+  <a href="/"><b class="icon" id="icon_m">&nbsp;</b></a>
+      {{BEGIN node_info}}           
+      <h1>{{name}}</h1>
+      {{END}}
+      
+        </div>
+</div>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+   <tr>
+      <td valign="top" class="nba"><div style="clear:both;padding-top:14px;"></div>
+<div class="rb">
+   <div class="t_rb" align="center" style="background:#dfe">
+      <div class="l_rb"></div><div class="r_rb"></div>
+      <div id="rb_title" align="center">
+         <table border="0" cellpadding="0" cellspacing="0" class="tt_rb">
+            <tr>
+               <td class="l_rb"></td><td id="h_rb">{{BEGIN node_info}}{{name}}{{END}}</td><td class="r_rb"></td>
+            </tr>
+         </table>
+      </div>
+   </div>
+   <div class="content_rb" align="left">
+
+         <table cellpadding="0" cellspacing="0" border="0" width="100%">
+         
+            <tr>
+            {{BEGIN data}}
+            {{BEGIN classes}}
+                     <td width="50%" align="left" height="65px">
+            <table cellpadding="0" cellspacing="0" border="0" width="95%" height="52px" class="catalog_item Tah_11_384666">
+            <tr>
+               <td id="ico_td"><a href="/catalog.php?node={{tree_id}}&class={{class_id}}"><img src="{{site}}/imgs/catalog/ico/back/{{dir_id}}_{{class_id}}.jpg" border="0" id="ico"></a></td>
+               <td id="item_td" align="justify">
+                  <a href="/catalog.php?node={{tree_id}}&class={{class_id}}" class="nba">{{class_name}} ({{class_items}})</a>
+               </td>
+            </tr>
+            </table>
+            </td>
+            {{ if(is_tr,'</tr><tr>')}}
+            {{ if(last_not_mod_two,'<td width="50%" align="left">&nbsp;</td>')}}
+            {{END}}
+            {{END}}
+            
+			</tr>
+         </table>
+         </div>
+   <div class="b_rb"><div class="l_rb"></div><div class="r_rb"></div></div>
+</div> </td>
+      <td valign="top" width="15px">&nbsp;</td>
+            <td valign="top" width="195px">
+
+
+
+
+
+<!-- <div class="block_right">
+   <div id="br_header" align="center">
+      <div id="h_left"></div>
+      <div>Бархатный сезон цен</div>
+   </div>
+   <div id="br_center">
+      <div id="f_left">
+         <div id="br_text" style="padding:0;">
+            <br>
+                        <div style="overflow:hidden">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+   <tr>
+      <td align="left" valign="top">
+      <a href="/products/20022599.html"  title="Встраиваемая посудомоечная машина 45 см Bosch SRV43M63EU">
+            <img src="/Pdb/20022599s.jpg" alt="Встраиваемая посудомоечная машина 45 см Bosch SRV43M63EU" style="padding-right: 2px;" border=0 vspace="2" hspace="2" width="95">
+            </a>
+      </td>
+      <td align="left" valign="top"><img src="/imgs/lowprice/brands/big/48.gif" alt="Bosch" /><br/><a href="/products/20022599.html" class="nba">Встраиваемая посудомоечная машина 45 см </a><br/><span class="grey"> SRV43M63EU</span></td>
+   </tr>
+   <tr>
+      <td colspan="2" align="left" style="padding-left:7px;"><div class="grey" style="padding-bottom:5px;">
+<table cellspacing="0" cellpadding="0" border="0">
+   
+   <tr>
+      <td align="right"><b class="number_image numbers_overline num_overline_1">&nbsp;</b><b class="number_image numbers_overline num_overline_9">&nbsp;</b><b class="number_image numbers_overline num_overline_9">&nbsp;</b><b class="number_image numbers_overline num_overline_9">&nbsp;</b><b class="number_image numbers_overline num_overline_0">&nbsp;</b><b class="number_image numbers_overline num_overline_">&nbsp;</b></td>
+      <td>&nbsp;</td>
+   </tr>
+      <tr>
+      <td valign="middle" align="right"><b class="number_image numbers_big num_big_1">&nbsp;</b><b class="number_image numbers_big num_big_7">&nbsp;</b><b class="number_image numbers_big num_big_9">&nbsp;</b><b class="number_image numbers_big num_big_9">&nbsp;</b><b class="number_image numbers_big num_big_0">&nbsp;</b><b class="number_image numbers_big num_big_">&nbsp;</b></td>
+      <td align="right" valign="middle">
+         <a href="/homeshop/?p=cart&ids[20022599]=1" title="Положить этот товар в корзину">
+            <img src="/imgs/nd/add_to_cart_small.gif" style="border:0px;">
+         </a>     
+      </td>
+   </tr>
+   </table>
+</div>
+
+
+
+
+
+
+      
+
+
+</td>
+   </tr>
+</table>
+<br>
+</div>
+
+
+         </div>
+      </div>
+   </div>
+</div>
+<div style="clear:both"></div>
+         <div class="br_bottom_link" id="ltop">
+               <div id="center_br">
+                  <div id="left"><div id="right"><div id="text"><noindex><a href="/barhatny-sezon/" rel="nofollow"><nobr>Все предложения</nobr></a></noindex></div></div></div>
+               </div>
+            </div>-->
+</td>
+         </tr>
+</table>
+
+
+<script type="text/javascript">
+   <!--
+    var path = "{{site}}/imgs/lowprice/brands/big/";
+    image_url = new Array();
+    image_name = new Array();
+    {{BEGIN data}}
+    {{BEGIN marks}}
+    {{BEGIN items}}
+             image_url[{{iteration}}] = path+'{{mark_id}}.gif';
+     image_name[{{iteration}}] = '{{mark_name}}';
+     {{END}}
+
+             var i = 1;
+    for(i=0; i<{{cnt}}; i++)
+    
+    {
+       preload_image_object = new Image();
+       preload_image_object.src = image_url[i];
+    }
+    {{END}}
+    {{END}}
+    
+   //-->
+   </script>
+<!-- <table cellpadding="0" cellspacing="0" border="0" width="100%">
+   <tr>
+      <td valign="top">
+         <div style="clear:both"></div>
+         <div style="padding:30px 0px 10px 0">
+       {{BEGIN data}}
+         {{BEGIN marks}}
+             {{BEGIN items}}
+				<input type="hidden" name="mark_{{iteration}}" id="mark_{{iteration}}" value="{{mark_id}}">
+				<input type="hidden" name="mark_link_{{iteration}}" id="mark_link_{{iteration}}" value="/catalog.php?group={{tree_id}}&mark={{mark_id}}">
+			{{END}}
+				<input type="hidden" name="mark_cnt" id="mark_cnt" value="{{cnt}}">
+		{{END}}
+	  {{END}}
+            <div class="rb">
+               <div class="t_rb" align="center">
+                  <div class="l_rb"></div>
+                  <div class="r_rb"></div>
+                  <div id="rb_title" align="center">
+                     <table border="0" cellpadding="0" cellspacing="0" class="tt_rb">
+                        <tr><td class="l_rb"></td><td id="h_rb">Производители</td><td class="r_rb"></td></tr>
+                     </table>
+                  </div>
+               </div>
+               <div class="content_rb" style="padding:0;margin:0;height:80px">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="catalog_brands">
+                     <tr>
+                        <td id="arr" style="padding-left:15px;"><img src="/imgs/catalog/arr_left.gif" border="0" style="cursor:pointer;visibility:hidden" id="mark_prev" onClick="show_marks('p');"></td>
+       {{BEGIN data}}
+         {{BEGIN marks}}       
+         	{{BEGIN items}}            
+                        <td width="70px" align="center"><a href="/catalog.php?group={{tree_id}}&mark={{mark_id}}" id="mark_url_{{iteration}}"><img src="{{site}}/imgs/lowprice/brands/big/{{mark_id}}.gif" border="0" id="mark_src_{{iteration}}"></a></td>
+            {{END}}
+		{{END}}
+		{{END}}
+		<!-- <td id="last" width="70px" align="center"><a href="/price/lvl_4/mark_940/" id="mark_url_9"><img src="/imgs/lowprice/brands/big/940.gif" border="0" id="mark_src_9"></a></td> -->
+<!-- 		<td id="arr" style="padding-right:15px;"><img src="/imgs/catalog/arr_right.gif" border="0" style="cursor:pointer;" id="mark_next" onClick="show_marks('n');"></td>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <td id="arr" style="padding-right:15px;"><img src="/imgs/catalog/arr_right.gif" border="0" style="cursor:pointer;" id="mark_next" onClick="show_marks('n');"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="b_rb"><div class="l_rb"></div><div class="r_rb"></div></div>
+            </div>
+         </div>
+      </td>
+      <td valign="top" width="15px">&nbsp;</td>
+   </tr>
+</table>-->
+</div>
+{{END}}
+{{footer}}

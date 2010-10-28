@@ -1,0 +1,90 @@
+{{header}} 
+{{path_html}}
+{{pager_html}}
+{{BEGIN data}}
+{{BEGIN data}}
+
+<table class="item_body w100pc">
+	<tr>
+		<td colspan="3" class="item_title"><b class="icon" id="icon_arr">&nbsp;</b>
+		<h4><a href="/catalog.php?good={{goods_id}}"
+			title="{{full_name}}">{{full_name}}</a></h4>
+		</td>
+	</tr>
+	<tr>
+		<td class="warecode">код товара: {{goods_id}}</td>
+		<td colspan="2"></td>
+	</tr>
+	<tr>
+		<td width="150px" align="center">
+		<div>&nbsp;</div>
+
+
+		<a href="/catalog.php?good={{goods_id}}"><img
+			src="{{site}}/Pdb/{{goods_id}}s.jpg"
+			border="0" hspace="5"
+			alt='{{full_name}}'
+			width="95px"></a> <br>
+		<br>
+		<noindex>
+		<div><a rel="nofollow"
+			href="{{site}}/compare/add.php?add_ids=40052284&refer=%2Fprice%2Flvl_105%2Fclass_262%2F"
+			class="nba">отложить для сравнения</a></div>
+
+		</noindex></td>
+		<td class="opts">
+		{{BEGIN desc}}
+		<span>{{property_name}}:</span>{{desc_value_mixed}}<br />
+		{{END}}
+		&nbsp;</td>
+		
+		  <td valign="top" width="205px">
+                <div class="grey" style="padding-bottom:5px;">
+<table cellspacing="0" cellpadding="0" border="0">
+   <tr>
+      <td valign="middle" align="left">
+      {{BEGIN old_price_formated}}
+      <b class="number_image numbers_big num_big_{{value}}">&nbsp;</b>
+      {{END}}
+      <b class="number_image numbers_big num_big_">&nbsp;</b></td>
+            <td align="right" valign="middle">
+         <a href="{{site}}/homeshop/?p=cart&ids[{{goods_id}}]=1" title="Положить этот товар в корзину">
+            <img src="{{site}}/imgs/nd/add_to_cart_small.gif"  style="border:0px;">
+         </a>
+      </td>
+    </tr>
+</table>
+	</td>
+	</tr>
+</table>
+       
+			<div style="clear:both;padding-top:5px;"></div>               
+			<table cellpadding="0" cellspacing="0" border="0" width="100%" height="25px" align="left" style="padding:0;margin:0;">
+               	<tr>
+                  	<td style="background:url({{site}}/imgs/pickup/bg_left.gif) top left no-repeat;width:12px"></td>
+                  	<td style="background:url({{site}}/imgs/pickup/bg.gif) top repeat-x;padding:0 13px;margin:0;" align="left">
+                     	
+                     	<div class="fll"><nobr>
+                     		<b class="pickup_ico" id="grey_check"></b> <div class="fll grey">Доставка курьером</div>
+                     		</nobr>
+                     	</div>
+                     	<b class="pickup_ico" id="help" onClick="show_pickup('inet'); return false;"></b>   
+                     	                  
+                     	<div style="float:right;margin-right:5px;">                     		
+                     		                     		<div class="grey fll">Забрать в магазине</div> <b class="pickup_ico" id="grey_down"></b>
+                     		                 
+                     		<b class="pickup_ico" id="help" onClick="show_pickup('shops', 500); return false;"></b>                       
+                     	</div>                   
+                  	</td>
+                  	<td style="background:url(/imgs/pickup/bg_right.gif) top right no-repeat;width:12px"></td>
+               	</tr>
+            </table>
+            <div style="clear:both"></div>
+                    
+            <div class="clear"></div>
+            </div>
+ 
+{{END}} 
+{{END}} 
+{{pager_html}}
+{{footer}}

@@ -1,0 +1,299 @@
+{{header}}
+<!-- // header -->
+<div style="width:809px;">
+
+		<object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="795" height="325">
+			<param name="movie" value="{{$site}}/carousel/banners_new.swf" />
+			<param name="quality" value="high" />
+			<param name="wmode" value="opaque" />
+			<param name="swfversion" value="8.0.35.0" />
+
+			<!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you donпїЅt want users to see the prompt. -->
+			<param name="expressinstall" value="{{$site}}/Scripts/expressInstall.swf" />
+			<!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+			<!--[if !IE]>-->
+			<object type="application/x-shockwave-flash" data="{{$site}}/carousel/banners_new.swf" width="795" height="325">
+			<!--<![endif]-->
+			<param name="quality" value="high" />
+			<param name="wmode" value="opaque" />
+			<param name="swfversion" value="8.0.35.0" />
+
+			<param name="expressinstall" value="{{$site}}/Scripts/expressInstall.swf" />
+			<!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+			<div>
+				<h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
+				<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" width="112" height="33" /></a></p>
+			</div>
+			<!--[if !IE]>-->
+			</object>
+
+			<!--<![endif]-->
+		</object>
+		
+		
+		
+							
+	<div class="offset"></div>
+					
+					
+	<center style="width:809px;position:absolute;z-index:1001">
+		<table class="yellow_caption small"><tr><td class="rbc_l"></td><th><a href="{{$site}}/deal_of_the_day/?ref=deal_of_day_home"><b class="red">Товар дня</b></a></th><td class="rbc_r"></td></tr></table>
+
+	</center>
+		
+	<div class="temp1" style="margin-bottom:0">
+		<div class="cb">
+		<div class="good_of_day" style="margin:0px;">
+			{{BEGIN deal_of_day}}
+			<table class="good_of_day_content" style="margin:0;width:100%">
+			
+			<tr>
+			<td class="box_good">
+			
+										<div class="card_photo_ico good_img" style="margin-right:7px;">
+											<b class="deal"></b>
+
+											<a href="{{$site}}/deal_of_the_day/?ref=deal_of_day_home"><img src="{{site}}/Pdb/{{$goods_id}}.jpg" alt="Лучшая цена на {{full_name}} в интернет-магазине М.Видео" title="{{$full_name}}. Товар дня в М.Видео"/></a>
+										</div>
+										<div>
+											<img src="{{site}}/imgs/lowprice/brands/big/{{$mark_id}}.gif" hspace="6" />
+											<br/>
+											<br/><a href="{{$site}}/deal_of_the_day/?ref=deal_of_day_home">{{$full_name}}</a><br/>			
+																	
+											<br/><span>{{BEGIN desc}} {{ if($property_group_name,$comp_data) }} {{$separator}}{{END}}</span>
+											<br/> 
+
+																						
+											<br/>					
+												
+											<br/>	
+									{{BEGIN deal}}											
+											<table class="tprogress invert">
+												<tr>
+													<td>Продано уже <b>{{$proc}}</b>% товаров</td>
+					
+													<td>До окончания продаж:</td>
+												</tr>
+												<tr>
+
+													<th><div class="progressbar progressbar_200_yellow"><div style="width:{{$proc}}%;">&nbsp;</div></div></th>
+													<th class="deadline"><span id="today_hrs">00</span> час. <span id="today_min">00</span> мин. <span id="today_sec">00</span> сек.</th>
+																										
+																									</tr>
+
+											</table>
+											<script language="JavaScript">CountBack_All({{$countdown}}, 'today_');</script>											
+											<br/>
+										</div>
+									{{END}}
+										<div class="clear1"></div>
+										<div class="flr"><a href="{{$site}}/deal_of_the_day/?ref=deal_of_day_home" class="red_a">Товар дня. Узнай больше.</a></div>
+									
+			
+			</td>
+			<td class="box_price" style="background-color:#ffebbf;width:auto;">
+				<div align="center">{{BEGIN deal}}
+										{{BEGIN prices_formated}}
+											<table>
+												<tr>
+													<td align="right" style="color:#898989;padding-bottom:5px">Цена:</td>
+													<td class="numbers small gray_yellow_bg">{{BEGIN max_price_arr}}<i class="n{{$value}}"></i>{{END}}<i class="n"></i></td>
+													<td class="numbers label">
+														<div>Экономия</div>{{BEGIN discount_arr}}<i class="n{{$value}}"></i>{{END}}<i class="n"></i></td>
+												</tr>
+
+												<tr>
+													<td align="right" style="color:#ed1c29" valign="bottom">Суперцена:</td>
+													<td colspan="2" class="numbers red_yellow_bg">{{BEGIN min_price_arr}}<i class="n{{$value}}"></i>{{END}}<i class="n"></i>
+													</td>
+												</tr>
+											</table>
+										{{END}}
+									{{END}}
+		
+																	<br/>
+											<div align="center"><a href="{{$site}}/homeshop/?p=cart&ids[20021640]=1"><img src="{{site}}/newdesign/img/deal_of_the_day/buy_redonyellow_small.png" alt="Хочу купить!"></a></div>
+
+											
+											<br/>
+											<div style="width:180px;font-weight:600;">
+												<b style="background:url({{$site}}/newdesign/img/card_ico.gif) no-repeat;display:block;background-position:-30px -45px;width:25px;height:11px;margin-right:10px;float:left; "></b>
+												БЕСПЛАТНАЯ ДОСТАВКА
+											</div>
+											<span class="grey">по Москве и ближнему Подмосковью</span>
+											
+											
+										</div>
+			</td>
+			</tr>
+
+			</table>
+			{{END}}
+		</div>
+		</div>
+		<b class="tl">&nbsp;</b><b class="tr">&nbsp;</b>					
+		<b class="bl">&nbsp;</b><b class="br">&nbsp;</b>
+	</div>					
+		
+	{{BEGIN deal_yesterday}}		
+	<div class="star_block" style="float:left;margin-left:20px;width:380px;margin-top:-1px"><div class="cb">
+		<div style="margin:6px 11px;color:#898989;">
+		<div style="float:left;"><span>Вчера было продано</span></div>
+
+		<a href="{{$site}}/deal_of_the_day/?ref=deal_of_day_home">
+			<div class="progressbar progressbar_120">
+			<div style="width:21%;">&nbsp;</div>
+			</div>
+		</a>
+		<div style="padding-left:10px;float:left">
+			<b>21</b>% товаров
+		</div>&nbsp;
+		</div>
+
+	</div>
+	<b class="bb"><b class="lb"></b><b class="rb"></b></b> 
+  </div>
+	{{END}}					
+	<div class="star_block" style="float:left;margin-left:1px;width:380px;margin-top:-1px"><div class="cb"><div style="margin:6px 11px"><a href="{{$site}}/deal_of_the_day/?ref=deal_of_day_home"><b class="red">Товар дня на завтра:</b></a> до начала продаж: &nbsp;<b id="tomorrow_hrs">00</b> <span>час.</span> <b id="tomorrow_min">00</b> <span>мин.</span> <b id="tomorrow_sec">00</b> <span>сек.</span>
+{{BEGIN deal_tomorrow}}
+	{{BEGIN deal}}
+						<script language="JavaScript">CountBack_All({{$countdown}}, 'tomorrow_');</script>
+				</div></div> <b class="bb"><b class="lb"></b><b class="rb"></b></b> </div>
+	{{END}}
+{{END}}
+			
+	
+
+								<!-- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ -->
+				<div class="offset"></div>
+				
+				<div class="rb">
+					<div class="t_rb" align="center">
+					 <div class="l_rb"></div>
+
+					 <div class="r_rb"></div>
+					 <div class="rb_title" align="center">
+					 <table border="0" cellpadding="0" cellspacing="0" class="tt_rb">
+						<tr>
+							<td class="l_rb"></td>
+							<td class="header_rb">Новинки</td>
+							<td class="r_rb"></td>
+						</tr>
+
+					 </table>
+					 </div>
+					</div>
+					<div class="content_rb" id="novs_div">
+					 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="main_novs">
+					 <tr>
+					 
+				{{BEGIN new_goods}}																
+					 {{BEGIN blocks}}
+					 <td align="center" valign="top"  height="131px">
+					 <table border="0" cellpadding="0" cellspacing="0" width="240px" align="center">
+						<tr>
+
+							<td valign="top" width="110px" height="100px">
+								<a href="{{$site}}/products/{{goods_id}}.html"><img src="http://www.mvideo.ru/Pdb/{{goods_id}}s.jpg" alt='{{full_name}}' /></a>
+							</td>
+							<td valign="top" align="left">
+								<img src="imgs/lowprice/brands/big/{{mark_id}}.gif" alt="" vspace="2"/><br />
+								<div class="novs_title"><a href="/products/{{goods_id}}.html">{{full_name}}</a><br/><a href="/products/{{goods_id}}.html" class="model">{{BEGIN group}}{{group_name}}{{END}}</a></div>
+							</td>
+						</tr>
+
+						<tr>
+							<td valign="top" align="center" colspan="2">
+																							{{BEGIN prices}}{{BEGIN formated_actual_price}}<b class="number_image numbers_big num_big_{{value}}">&nbsp;</b>{{END}}{{END}}
+								
+																	<a href="{{$site}}/homeshop/?p=cart&amp;ids[{{goods_id}}]=1"><img src="http://www.mvideo.ru/imgs/nd/add_to_cart_small.gif" alt="" hspace="4" /></a>
+																							</td>
+						</tr>
+					 </table>
+					 </td>
+					 {{END}}
+				{{END}}
+					 
+					 
+					 
+					 
+											</tr>
+					 </table>
+					</div>
+					<div class="b_rb"><div class="l_rb"></div><div class="r_rb"></div></div>
+				</div>
+
+				
+				<div class="offset"></div>
+				<div class="rb">
+					<div class="t_rb" align="center">
+					 <div class="l_rb"></div>
+					 <div class="r_rb"></div>
+					 <div class="rb_title" align="center">
+					 <table border="0" cellpadding="0" cellspacing="0" class="tt_rb">
+						<tr>
+							<td class="l_rb"></td>
+
+							<td class="header_rb">Новости</td>
+							<td class="r_rb"></td>
+						</tr>
+					 </table>
+					 </div>
+					</div>
+					<div class="content_rb black">
+					 <table border="0" cellpadding="0" cellspacing="0" width="95%" class="main_news">
+
+											<tr class="news_bot">
+					 <td align="center" width="98%" valign="top">
+						<div class="news_image"><a href="{{$site}}/news/?id=324"><img src="http://www.mvideo.ru/new_imgs/news/324.jpg" alt="" /></a><div style="clear:both"></div></div>
+						<div class="news_text" align="left">
+							<div class="news_title"><a href="{{$site}}/news/?id=324">13.09.2010 Начало продаж LED телевизоров серии LE320 со светодиодной подсветкой Edge LED</a></div>
+							В конце сентября 2010 года Sharp представляет в России шесть моделей LED телевизоров  телевизоров серии LE320 с диагональю экрана от 19 до 42 дюймов. Все модели серии LE320 имеют краевую светодиодную подсветку Edge LED, что позволило сделать тонким корпус телевизора, а также понизить энергопотребление.
+						</div>
+						<br />
+					 </td>
+
+					 </tr>
+											<tr class="news_bot">
+					 <td align="center" width="98%" valign="top">
+						<div class="news_image"><a href="{{$site}}/news/?id=322"><img src="http://www.mvideo.ru/new_imgs/news/322.jpg" alt="" /></a><div style="clear:both"></div></div>
+						<div class="news_text" align="left">
+							<div class="news_title"><a href="{{$site}}/news/?id=322">10.09.2010 Оказывается бывает еще лучше!</a></div>
+							Уже в октябре в «М.Видео» – обновленная линейка культовых плееров iPod!
+						</div>
+						<br />
+
+					 </td>
+					 </tr>
+											<tr class="news_bot">
+					 <td align="center" width="98%" valign="top">
+						<div class="news_image"><a href="{{$site}}/news/?id=323"><img src="http://www.mvideo.ru/new_imgs/news/323.jpg" alt="" /></a><div style="clear:both"></div></div>
+						<div class="news_text" align="left">
+							<div class="news_title"><a href="{{$site}}/news/?id=323">10.09.2010 Акция «Товар дня» на сайте «М.Видео»</a></div>
+							На сайте «М.Видео» стартовала акция <a href="{{$site}}/deal_of_the_day/"><b>«Товар дня»</b></a>. Каждый день мы делаем вам предложение о покупке одного товара по специальной цене. И каждый день этот товар меняется. Заходите на www.mvideo.ru почаще, следите за главной страницей нашего сайта, и вы сможете приобрести необходимую вам технику  по суперцене! Акция действует только в интернет-магазине! 
+						</div>
+
+						<br />
+					 </td>
+					 </tr>
+											<tr class="news_bot">
+					 <td align="center" width="98%" valign="top">
+						<div class="news_image"><a href="{{$site}}/news/?id=314"><img src="http://www.mvideo.ru/new_imgs/news/314.jpg" alt="" /></a><div style="clear:both"></div></div>
+						<div class="news_text" align="left">
+							<div class="news_title"><a href="{{$site}}/news/?id=314">06.09.2010 HALO: REACH - эксклюзивный старт продаж В «M.Видео»</a></div>
+
+							Этой осенью увидит свет самая ожидаемая игра 2010 года - Halo: Reach, приквел к знаменитой трилогии, которую многие считают величайшей в истории видеоигр. Посетители <a href="{{$site}}/shops/?p=892"><b>магазина«М.Видео»</b></a> в ТЦ «Метрополис» смогут первыми в России приобрести новую часть легендарного игрового блокбастера.
+						</div>
+						<br />
+					 </td>
+					 </tr>
+											</table>
+					</div>
+					<div class="b_rb"><div class="l_rb"></div><div class="r_rb"></div></div>
+
+				</div>
+				
+				<div class="clear"></div>
+</div>
+<!-- footer -->
+{{footer}}
