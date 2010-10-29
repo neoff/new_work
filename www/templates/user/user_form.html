@@ -1,0 +1,335 @@
+{{BEGIN java_script}}
+	Hello, {{$object}}!
+{{END}}
+<!-- Ваши данные -->
+
+<script language=javascript>
+
+function change_preson()
+{
+   var person = document.getElementById('userdata_person').value;
+   if (person=="natural") hide='none';
+   else hide='block';
+   document.getElementById('juridical_div').style.display=hide;         
+}
+
+
+function go_next()
+{
+	//if (ValidateUserdata())	
+	document.userdata.submit();
+}
+
+</script>
+
+<div style="clear:both;height:20px;"></div>
+
+<form id="userdata" name="userdata" method="post" action="">
+
+<!-- залогиненный пользователь -->
+
+        
+{{ BEGIN user_login }}
+	{{include('user/login_form.html')}}
+{{ END }}
+
+<div class="rb">
+   <div class="t_rb" align="center">
+      <div class="l_rb"></div>
+      <div class="r_rb"></div>
+      <div id="rb_title" align="center">
+         <table border="0" cellpadding="0" cellspacing="0" class="tt_rb">
+            <tr>
+               <td class="l_rb"></td><td id="h_rb">Добро пожаловать, Ваши данные</td><td class="r_rb"></td>
+            </tr>
+         </table>
+      </div>
+   </div>
+   <div class="content_rb" style="text-align:left;padding:0;"><br>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="medium_table">
+         <tr>
+            <td class="grey" colspan="4" height="30px"><div class="fll"><b class="empty_bg" id="w15h1"></b>Поля, отмеченные&nbsp;</div><b class="cart_ico" id="tick"></b><div class="fll">, обязательны для заполнения.</div></td>
+         </tr>
+         <tr class="propgroup">
+            <td colspan="4" class="propgroup"><b class="empty_bg" id="w15h1"></b>Персональная информация</td>
+         </tr>         
+         <tr>
+            <td id="left" width="150px"><nobr><b class="cart_ico" id="tick"></b>Представьтесь:</nobr></td>
+            <td id="left" colspan="3"><input type="text" name="userdata[name]" id="userdata_name" value="" class="greyINPUT" style="width:400px" maxlength="50">&nbsp;&nbsp;&nbsp;<span class="grey"> - Как к вам обращаться?</span></td>
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>E-mail:</nobr></td>
+            <td id="left" colspan="3"><input type="text" name="userdata[mail]" id="userdata_mail" value="" maxlength="100" class="greyINPUT"></td>
+         </tr>
+         
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Пароль:</nobr></td>
+            <td id="left" colspan="3"><input type="password" name="userdata[newpassword]" maxlength="30" value="" class="greyINPUT"></td>
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Повторите&nbsp;пароль:</nobr></td>
+            <td id="left" colspan="3"><input type="password" name="userdata[newpassword2]" maxlength="30" value="" class="greyINPUT"></td>
+         </tr>
+		 
+		 	<tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Логин:</nobr></td>
+            <td id="left" colspan="3"><input type="text" name="userdata[newregname]" maxlength="30" value="" class="greyINPUT" id="userdata_newregname"></td>
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Пароль:</nobr></td>
+            <td id="left" colspan="3"><input type="password" name="userdata[newpassword]" maxlength="30" value="" class="greyINPUT" id="userdata_newpassword"></td>
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Повторите&nbsp;пароль:</nobr></td>
+            <td id="left" colspan="3"><input type="password" name="userdata[newpassword2]" maxlength="30" value="" class="greyINPUT" id="userdata_newpassword2"></td>
+         </tr>
+		 
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Вы являетесь:</nobr></td>
+            <td id="left" colspan="3">
+               <select name="userdata[person]" id="userdata_person" onChange="change_preson()" class="greyINPUT">
+                  <option value="natural" selected>физическим лицом
+                  <option value="juridical" selected>юридическим лицом
+               </select>            
+            </td>
+         </tr>      
+      </table>
+      
+      
+      
+      <div id="juridical_div" style="display:none;">
+      <div class="clear"></div>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="medium_table">
+         <tr class="propgroup">
+            <td colspan="4" class="propgroup"><b class="empty_bg" id="w15h1"></b>Для юридических лиц</td>
+         </tr>         
+         <tr>
+            <td id="left" width="150px"><nobr><b class="cart_ico" id="tick"></b>Название организации:</nobr></td>
+            <td id="left" width="207px"><input id="userdata_organization" type="text" name="userdata[organization]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left" width="87px"><nobr><b class="cart_ico" id="tick"></b>Банк:</nobr></td>
+            <td id="left"><input id="userdata_bank" type="text" name="userdata[bank]" value="" class="greyINPUT" maxlength="100"></td>
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Р/с:</nobr></td>
+            <td id="left"><input id="userdata_rs" type="text" name="userdata[rs]" value="" class="greyINPUT" maxlength="20"></td>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>К/с:</nobr></td>
+            <td id="left"><input id="userdata_ks" type="text" name="userdata[ks]" value="" class="greyINPUT" maxlength="20"></td>
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>ИНН:</nobr></td>
+            <td id="left"><input id="userdata_inn" type="text" name="userdata[inn]" value="" class="greyINPUT" maxlength="10"></td>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>БИК:</nobr></td>
+            <td id="left"><input id="userdata_bik" type="text" name="userdata[bik]" value="" class="greyINPUT" maxlength="9"></td>
+         </tr>
+         
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>КПП:</nobr></td>
+            <td id="left"><input id="userdata_kpp" type="text" name="userdata[kpp]" value="" class="greyINPUT" maxlength="9"></td> 
+            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>ОКДП:</nobr></td>
+            <td id="left"><input id="userdata_okdp" type="text" name="userdata[okdp]" value="" class="greyINPUT" maxlength="50"></td> 
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Юридический адрес:</nobr></td>
+            <td id="left"><input id="userdata_jur_addr" type="text" name="userdata[jur_addr]" value="" class="greyINPUT" maxlength="150"></td>
+            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>ОКПО:</nobr></td>
+            <td id="left"><input id="userdata_okpo" type="text" name="userdata[okpo]" value="" class="greyINPUT" maxlength="50"></td> 
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Сайт компании:</nobr></td>
+            <td id="left"><input id="userdata_www" type="text" name="userdata[www]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>ОКОНХ/ОКВЭД:</nobr></td>
+            <td id="left"><input id="userdata_okonh" type="text" name="userdata[okonh]" value="" class="greyINPUT" maxlength="50" style="width:69px"> / <input id="userdata_okved" type="text" name="userdata[okved]" value="" class="greyINPUT" maxlength="50" style="width:69px"></td> 
+         </tr>         
+      </table>
+      </div>
+      
+      
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="medium_table">
+         <tr class="propgroup">
+            <td colspan="6" class="propgroup"><b class="empty_bg" id="w15h1"></b>Адрес доставки</td>
+         </tr>         
+         <tr>
+            <td id="left" width="150px"><nobr><b class="cart_ico" id="tick"></b>Регион:</nobr></td>
+            <td id="left" width="200px">
+ 				<select name="userdata[region]" class="greyINPUT" id="userdata_region" onChange="regionSelect(this)">
+					<option value="">выберите регион</option>
+					
+				</select>
+				</td>
+            <td id="left" width="87px"><nobr><b class="cart_ico" id="tick"></b>Дом:</nobr></td>
+            <td id="left"><input id="userdata_house" type="text" name="userdata[house]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+				<td id="left" width="87px"><nobr><b class="cart_ico" id="tick"></b>Корпус:</nobr></td>
+				<td id="left"><input id="userdata_corpus" type="text" name="userdata[corpus]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Город:</nobr></td>
+            <td id="left"><input id="userdata_city" type="text" name="userdata[city]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Строение:</nobr></td>
+            <td id="left"><input id="userdata_building" type="text" name="userdata[building]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Подъезд:</nobr></td>
+            <td id="left"><input id="userdata_podezd" type="text" name="userdata[podezd]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Станция метро:</nobr></td>
+            <td id="left"><input id="userdata_metro" type="text" name="userdata[metro]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Офис:</nobr></td>
+            <td id="left"><input id="userdata_office" type="text" name="userdata[office]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Этаж:</nobr></td>
+            <td id="left"><input id="userdata_level" type="text" name="userdata[level]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+         </tr>
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Улица:</nobr></td>
+            <td id="left"><input id="userdata_street" type="text" name="userdata[street]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Квартира:</nobr></td>
+            <td id="left"><input id="userdata_flat" type="text" name="userdata[flat]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+            <td id="left" width="87px"><nobr><b class="empty_bg" id="w15h1"></b>Домофон:</nobr></td>
+            <td id="left"><input id="userdata_code" type="text" name="userdata[code]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+         </tr>
+         <tr>
+            <td id="left"><b class="cart_ico" id="tick"></b>Телефон:</td>
+            <td id="left"><input id="userdata_phone" type="text" name="userdata[phone]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left"><b class="empty_bg" id="w15h1"></b>Факс:</td>
+            <td id="left" colspan="3"><input id="userdata_fax" type="text" name="userdata[fax]" value="" class="greyINPUT" maxlength="50"></td>  
+         </tr>   
+         <tr>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Мобильный телефон:</nobr><br><span class="grey">+7(XXX)XXX-XX-XX</span></td>
+            <td id="left">+7 <input id="userdata_mobile_phone" type="text" name="userdata[mobile_phone]" value="" class="greyINPUT" style="width:134px" maxlength="50"></td>
+            <td id="left" colspan="4"><div class="fll"><b class="empty_bg" id="w15h1"></b>Грузовой лифт:&nbsp;&nbsp;<input id="userdata_lift" type="checkbox" name="userdata[lift]" value="1" checked></div>
+            <div class="flr" style="margin-right:45px">Подписаться на рассылку новостей:&nbsp;&nbsp;<input id="userdata_maillist" type="checkbox" name="userdata[maillist]" value="1" checked></div></td>  
+         </tr>     
+      </table>
+      
+     
+      
+      
+      <!-- кнопки -->
+      
+      
+  	     <!--
+  	     <div style="padding:15px 15px 0 15px">
+  	     
+  	      <div class="fll">
+			<b class="cart_buttons" id="grey_left"></b>
+			<b class="cart_buttons" id="grey_bg">	
+				<b class="fll"><a href="/addresses.php#add" style="color:#fff">Добавить адрес</a></b>
+			</b>
+			<b class="cart_buttons" id="grey_right"></b>
+			</div> 
+			
+			<div class="fll" style="padding-left:10px">
+			<b class="cart_buttons" id="grey_left"></b>
+			<b class="cart_buttons" id="grey_bg">	
+				<b class="fll"><a href="/addresses.php" style="color:#fff">Изменить адреса</a></b>
+			</b>
+			<b class="cart_buttons" id="grey_right"></b>
+			</div> 		
+  	        
+	  	</div>
+   		 
+   		 <div style="padding:15px">
+   		<div class="fll">
+			<b class="cart_buttons" id="grey_left"></b>
+			<b class="cart_buttons" id="grey_bg">	
+				<b class="fll"><a href="/addresses.php" style="color:#fff">Добавить адрес</a></b>
+			</b>
+			<b class="cart_buttons" id="grey_right"></b>
+			</div> 
+	  		<div style="float:left;padding:3px 0 0 15px;" class="grey">Вы можете добавить несколько адресов доставки (например, домашний и рабочий)</div>
+	  		<div class="clear"></div>
+	  		</div>   
+  		
+	  
+	  <div class="clear"></div>
+	  
+	  -->
+      
+		<!-- Другие адреса доставки -->
+		<!-- <div style="clear:both"></div>
+		<img src="/new_imgs/e.gif" height="15px" width="1px" border="0">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" class="medium_table">
+         <tr class="propgroup">
+            <td class="propgroup"><b class="empty_bg" id="w15h1"></b>Можно выбрать другой адрес доставки:</td>
+         </tr>         
+         <tr>
+            <td><img src="/new_imgs/e.gif" height="7px" width="1px" border="0"><br>
+             
+				<b class="empty_bg" id="w15h1"></b><a href="/addresses.php?act=reverse&id=" title="подставить"></a><br />
+    		 
+    		 <img src="/new_imgs/e.gif" height="7px" width="1px" border="0"><br>
+			</td>
+         </tr>         
+      </table>-->
+	  <!-- // Другие адреса доставки -->
+	  
+      
+      <div style="clear:both;"></div>
+      
+      <!-- промо код аватара -->
+      <!--
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="medium_table" style="border-bottom:#cacaca 1px solid;">
+         <tr class="propgroup">
+            <td colspan="2" class="propgroup"><b style="color:red">Введите промо-код предзаказа на Blu-Ray диск "Аватар"</b></td>
+         </tr>     
+         <tr>
+            <td id="left" width="173px"><b class="empty_bg" id="w15h1"></b>Ваш промо-код:&nbsp;</td>
+      		<td id="left"><input type="text" name="avatar_promo" value="" size="13" maxlength="13" class="greyINPUT"></td>
+         </tr> 
+      </table>
+      
+      <div class="offset"></div>
+      -->
+
+      <!-- бонусная карта -->
+      
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="medium_table" style="border-bottom:#cacaca 1px solid;">
+         <tr class="propgroup">
+            <td colspan="2" class="propgroup"><b class="empty_bg" id="w15h1"></b>Введите номер бонусной карты</td>
+         </tr> 
+         
+      	 <tr>
+      	   <td>&nbsp;</td>
+      	   <td style="color:red;font-weight:bold;">
+         	<!--Вы ввели некорректный номер карты
+         	Ваша карта заблокирована
+         	Ваши фамилия и имя не совпадают с фамилией и именем владельца бонусной карты
+         	Карта с указанными номером не найдена
+         	Система временно недоступна-->
+         	
+      	   </td>
+      	 </tr>
+   		         
+         <tr>
+            <td id="left" width="173px"><b class="empty_bg" id="w15h1"></b>Номер Вашей бонусной карты:&nbsp;</td>
+      		<td id="left"><input type="text" name="bonuscard" value="" maxlength="8" class="greyINPUT"></td>
+         </tr> 
+      </table>
+      
+      <!-- кнопки -->
+      <div style="padding:15px"> 
+         
+         
+         <!--<div class="fll">
+			<b class="cart_buttons" id="grey_left"></b>
+			<b class="cart_buttons" id="grey_bg">	
+				<b class="fll"><a href="?logout=1&forward=" style="color:#FFF">Выход</a></b>
+			</b>
+			<b class="cart_buttons" id="grey_right"></b>
+			</div> -->
+		       
+		 
+		 <div class="flr">
+			<b class="cart_buttons" id="red_left"></b>
+			<b class="cart_buttons" id="red_bg">	
+				<b class="fll"><a href="javascript:go_next();" style="color:#fff">Продолжить</a></b><a href="javascript:go_next();" style="color:#fff"><b class="cart_buttons" id="red_next"></b></a>
+			</b>
+			<b class="cart_buttons" id="red_right"></b>
+		</div> 
+        
+        <div style="clear:both;"></div>
+      </div>
+      
+   </div>
+   <div class="b_rb"><div class="l_rb"></div><div class="r_rb"></div></div>			
+</div>
+
+</form>

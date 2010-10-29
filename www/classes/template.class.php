@@ -1,6 +1,6 @@
 <?php
 
-class template {
+class template extends Blitz{
 	
 	protected $template_collection = array();
 	protected $collection_names = array();
@@ -18,7 +18,7 @@ class template {
 		$this->template_collection[$template_class.$template_name] = new Blitz($this->template_dir.$template_class.$template_name.$this->template_extention);
 	}
 	
-	public function set_block($block,$data,$template_name,$template_class=''){
+	public function set_block($block,$data="",$template_name,$template_class=''){
 		$template_class = $template_class != '' ? $template_class."/" : $template_class;
 		$this->template_collection[$template_class.$template_name]->Block($block,$data);
 	}

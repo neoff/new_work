@@ -1,0 +1,153 @@
+<!-- Адрес доставки -->
+<br>
+<table width=97% border=0 cellspacing=0 cellpadding=0 align=right
+style="clear:both;">
+<tr>
+<td width="20%" valign=middle class=TahDark11 style="padding:6px 2px 6px 5px;">
+<img src="/imgs/tick.gif" align=absmiddle width=8 height=7 border=0>&nbsp;&nbsp;Регион:
+</td>
+<td width="20%" valign=middle align=left>
+<select name='userdata[region]' class=formINPUT style="width:90%" id=userdata_region
+onChange="regionSelect(this)">
+<option value=''>выберите регион</option>
+{html_options options=$user->region_options selected=$user->userdata.region}
+</select>
+</td>
+<td width="15%" align=left valign=middle class=TahDark11
+style="padding:6px 2px 6px 5px;">
+<img src="/imgs/tick.gif" align=absmiddle width=8 height=7 border=0>&nbsp;Дом:
+</td>
+<td width="10%" valign=middle>
+<input type='text' name='userdata[house]' value='{$user->userdata.house|escape}' maxlength='10' class=formINPUT style="width:40px" id=userdata_house>
+</td>
+<td width="10%" align=left valign=middle class=TahDark11
+style="padding:6px 2px 6px 10px;">Корпус:</td>
+<td width="30%" valign=middle>
+<input type='text' name='userdata[corpus]' value='{$user->userdata.corpus|escape}' maxlength='10' class=formINPUT style="width:40px" id=userdata_corpus>
+</td>
+</tr>
+<tr bgcolor=#eeefec>
+<td width="20%" valign=middle class=TahDark11
+style="padding:6px 2px 6px 5px;"><img src="/imgs/tick.gif" align=absmiddle width=8 height=7 border=0>&nbsp;&nbsp;Город:</td>
+<td width="20%" valign=middle align=left>
+<input type='text' name='userdata[city]' value='{$user->userdata.city|escape}' maxlength='30' class=formINPUT style="width:95%" id=userdata_city>
+</td>
+<td width="15%" align=left valign=middle class=TahDark11 style="padding:6px 2px 6px 17px;">Строение:</td>
+<td width="10%" valign=middle>
+<input type='text' name='userdata[building]' value='{$user->userdata.building|escape}' maxlength='10' class=formINPUT style="width:40px">
+</td>
+<td width="10%" align=left valign=middle class=TahDark11 style="padding:6px 2px 6px 10px;">Подъезд:</td>
+<td width="10%" valign=middle>
+<input type='text' name='userdata[podezd]' value='{$user->userdata.podezd|escape}' maxlength='10' class=formINPUT style="width:40px">
+</td>
+</tr>
+<tr>
+<td width="20%" valign=middle class=TahDark11
+style="padding:6px 2px 6px 17px;">Станция метро:
+</td>
+<td width="20%" valign=middle align=left>
+<input type='text' name='userdata[metro]' value='{$user->userdata.metro|escape}' maxlength='30' class=formINPUT style="width:90%">
+</td>
+<td width="15%" align=left valign=middle class=TahDark11 style="padding:6px 2px 6px 17px;">Офис:</td>
+<td width="10%" valign=middle>
+<input type='text' name='userdata[office]' value='{$user->userdata.office|escape}' maxlength='10' class=formINPUT style="width:40px">
+</td>
+<td width="10%" align=left valign=middle
+class=TahDark11 style="padding:6px 2px 6px 10px;">Этаж:</td>
+<td width="30%" valign=middle>
+<input type='text' name='userdata[level]' value='{$user->userdata.level|escape}' maxlength='10' class=formINPUT style="width:40px">
+</td>
+</tr>
+<tr bgcolor=#eeefec>
+<td width="20%" valign=middle class=TahDark11 style="padding:6px 2px 6px 5px;">
+<img src="/imgs/tick.gif" align=absmiddle width=8 height=7 border=0>&nbsp;&nbsp;Улица
+</td>
+<td width="20%" valign=middle align=left>
+<input type='text' name='userdata[street]' value='{$user->userdata.street|escape}' maxlength='30' class=formINPUT style="width:90%" id=userdata_street>
+</td>
+</td>
+<td width="15%" align=left valign=middle class=TahDark11
+style="padding:6px 2px 6px 17px;">Квартира:</td>
+<td width="10%" valign=middle>
+<input type='text' name='userdata[flat]' value='{$user->userdata.flat|escape}'  maxlength='10' class=formINPUT style="width:40px">
+</td>
+<td width="10%" align=left valign=middle class=TahDark11 style="padding:6px 2px 6px 10px;">Код:</td>
+<td width="30%" valign=middle>
+<input type='text' name='userdata[code]' value='{$user->userdata.code|escape}' maxlength='10' class=formINPUT style="width:40px">
+</td>
+</tr>
+<tr>
+<td width="20%" valign=middle class=TahDark11 style="padding:6px 2px 6px 5px;">
+<img src="/imgs/tick.gif" align=absmiddle width=8 height=7 border=0>&nbsp;&nbsp;Телефон
+</td>
+<td width="20%" valign=middle align=left>
+<input type='text' name='userdata[phone]' value='{$user->userdata.phone|escape}' maxlength='30' class=formINPUT style="width:90%" id=userdata_phone>
+</td>
+<td colspan=4 valign=middle align=left class=TahDark11 style="padding:2px 2px 2px 17px;">Грузовой лифт:
+{html_radios name="userdata[lift]" options=$user->lift_options  checked=$user->userdata.lift style="border:none;padding:0;margin:0"}
+</td>
+</tr>
+<tr bgcolor=#eeefec>
+<td width="20%" valign=middle class=TahDark11 style="padding:6px 2px 6px 5px;"> <img src="/imgs/tick.gif" align=absmiddle width=8 height=7 border=0>&nbsp;&nbsp;Мобильный телефон</td>
+<td width="20%" valign=middle align=left>
++7 <input type='text' name='userdata[mobile_phone]' value='{$user->userdata.mobile_phone|escape}' maxlength='20' class=formINPUT style="width:114px" id=userdata_mobile_phone>
+</td>
+
+<td width="20%" valign=middle class=TahDark11 style="padding:6px 2px 6px 17px;"> Факс</td>
+<td width="20%" valign=middle align=left>
+<input type='text' name='userdata[fax]' value='{$user->userdata.fax|escape}' maxlength='30' class=formINPUT style="width:90%" id=userdata_phone>
+</td>
+{if $smarty.server.SCRIPT_NAME=="/addresses.php"}
+<td colspan=2 align=right class=TahDark11>
+        удалить:&nbsp;&nbsp;
+<input type=checkbox name='userdata[delete]' value="1" style="border:none;margin:0;padding:0"
+    onClick=" if (this.checked) a = window.confirm('Вы уверены, что хотите удалить основной адрес?'); else a=true; return a"></nobr>
+</td>
+{else}
+<td colspan=2><img src=/imgs/1.gif width=1 height=1 border=0></td>
+{/if}
+</tr>
+<tr><td class=dottedTop colspan=6><img src=/imgs/1.gif width=1 height=1 border=0></td></tr>
+{if ($user->userdata.user_id && $smarty.server.SCRIPT_NAME!="/addresses.php") }
+  {if ($user->IsUserAdresses())}
+  <tr>
+
+     <td colspan="6" align="left" valign="top">
+     <span class=catalogListTabBtm style="float:right;margin-top:3px"><a href=/addresses.php#add>Добавить адрес</a></span>
+     <span class=catalogListTabBtm style="float:right;margin-top:3px"><a href=/addresses.php>Изменить адреса</a></span>
+     </td>
+   </tr>
+   {else}
+   <tr>
+      <td align="left" valign="top">
+      <span class=catalogListTabBtm style="float:left;margin-top:3px;"><a href=/addresses.php>Добавить адрес</a></span>
+    </td>
+
+    <td colspan=5 class=TahDark11 style="padding:3px 0 0 0">
+       <a href=#><img src=/imgs/quest_icon.gif width=14 height=14 border=0 hspace=10 vspace=2 align=left style="padding-bottom:20px;"></a>
+                        Для удобства Вы можете добавить несколько адресов доставки (например, домашний и рабочий)
+                        </td>
+    </tr> 
+  {/if}
+
+{/if}
+{if ($user->IsUserAdresses() && $smarty.server.SCRIPT_NAME!="/addresses.php" )}
+        {assign var="addresses" value=$user->SplitUserAdress()}
+<!-- Другие адреса доставки -->
+<tr>
+<td colspan=6 align=left class=TahDark9b style="padding:10px 2px 5px 20px;">
+                        Можно выбрать другой адрес доставки:
+</td>
+</tr>
+<tr>
+<td colspan=6 align=left class=TahDark11  style="padding:0px 2px 0px 20px;">
+    {foreach from=$addresses key=id item=address name="adsresses"}
+<a href="/addresses.php?act=reverse&id={$id}" title="подставить">{$address}</a><br>
+    {/foreach}
+</td>
+</tr>
+<tr><td class=dottedBottom colspan=6><img src=/imgs/1.gif width=1 height=10 border=0></td></tr>
+<!-- // Другие адреса доставки -->
+{/if}
+</table>
+
