@@ -1,7 +1,6 @@
 <?php
 require_once 'classes/catalog.class.php';
 
-ini_set("display_errors",'On');
 $catalog = new catalog();
 
 $data = array();

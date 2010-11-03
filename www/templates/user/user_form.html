@@ -1,5 +1,4 @@
 {{BEGIN java_script}}
-	Hello, {{$object}}!
 {{END}}
 <!-- Ваши данные -->
 
@@ -23,16 +22,17 @@ function go_next()
 </script>
 
 <div style="clear:both;height:20px;"></div>
+{{ BEGIN user_login }}
+	{{ login_form }}
+{{ END }}
 
 <form id="userdata" name="userdata" method="post" action="">
 
 <!-- залогиненный пользователь -->
 
         
-{{ BEGIN user_login }}
-	{{include('user/login_form.html')}}
-{{ END }}
 
+{{ BEGIN user_register }}
 <div class="rb">
    <div class="t_rb" align="center">
       <div class="l_rb"></div>
@@ -50,54 +50,48 @@ function go_next()
          <tr>
             <td class="grey" colspan="4" height="30px"><div class="fll"><b class="empty_bg" id="w15h1"></b>Поля, отмеченные&nbsp;</div><b class="cart_ico" id="tick"></b><div class="fll">, обязательны для заполнения.</div></td>
          </tr>
-         <tr class="propgroup">
+         <tr class="propgroup"><input type="text">
             <td colspan="4" class="propgroup"><b class="empty_bg" id="w15h1"></b>Персональная информация</td>
          </tr>         
          <tr>
-            <td id="left" width="150px"><nobr><b class="cart_ico" id="tick"></b>Представьтесь:</nobr></td>
-            <td id="left" colspan="3"><input type="text" name="userdata[name]" id="userdata_name" value="" class="greyINPUT" style="width:400px" maxlength="50">&nbsp;&nbsp;&nbsp;<span class="grey"> - Как к вам обращаться?</span></td>
-         </tr>
-         <tr>
-            <td id="left"><nobr><b class="cart_ico" id="tick"></b>E-mail:</nobr></td>
-            <td id="left" colspan="3"><input type="text" name="userdata[mail]" id="userdata_mail" value="" maxlength="100" class="greyINPUT"></td>
+            <td id="left" ><nobr><b class="cart_ico" id="tick" ></b>E-mail:</nobr></td>
+            <td id="left" colspan="3"><input type="text" name="userdata[mail]" id="userdata_mail" value="{{ $mail }}" maxlength="100" class="greyINPUT" {{ if($error_mail, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
          </tr>
          
          <tr>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>Пароль:</nobr></td>
-            <td id="left" colspan="3"><input type="password" name="userdata[newpassword]" maxlength="30" value="" class="greyINPUT"></td>
+            <td id="left" colspan="3"><input type="password" name="userdata[newpassword]" maxlength="30" value="{{ $newpassword }}" class="greyINPUT" {{ if($error_password, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
          </tr>
          <tr>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>Повторите&nbsp;пароль:</nobr></td>
-            <td id="left" colspan="3"><input type="password" name="userdata[newpassword2]" maxlength="30" value="" class="greyINPUT"></td>
-         </tr>
-		 
-		 	<tr>
-            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Логин:</nobr></td>
-            <td id="left" colspan="3"><input type="text" name="userdata[newregname]" maxlength="30" value="" class="greyINPUT" id="userdata_newregname"></td>
+            <td id="left" colspan="3"><input type="password" name="userdata[newpassword2]" maxlength="30" value="{{ $newpassword2 }}" class="greyINPUT"{{ if($error_password, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
          </tr>
          <tr>
-            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Пароль:</nobr></td>
-            <td id="left" colspan="3"><input type="password" name="userdata[newpassword]" maxlength="30" value="" class="greyINPUT" id="userdata_newpassword"></td>
-         </tr>
-         <tr>
-            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Повторите&nbsp;пароль:</nobr></td>
-            <td id="left" colspan="3"><input type="password" name="userdata[newpassword2]" maxlength="30" value="" class="greyINPUT" id="userdata_newpassword2"></td>
-         </tr>
-		 
-         <tr>
-            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Вы являетесь:</nobr></td>
+            <td id="left"><nobr><b class="cart_ico" id="tick"></b>Вы являетесь: </nobr></td>
             <td id="left" colspan="3">
                <select name="userdata[person]" id="userdata_person" onChange="change_preson()" class="greyINPUT">
-                  <option value="natural" selected>физическим лицом
-                  <option value="juridical" selected>юридическим лицом
+                  <option value="natural" {{ IF person}}{{ ELSE }}selected{{ END if-person }}>физическим лицом
+                  <option value="juridical" {{ IF person }}selected{{ END if-person }}>юридическим лицом
                </select>            
             </td>
+			<tr>
+            <td id="left" width="150px"><nobr><b class="cart_ico" id="tick"></b>Фамилия:</nobr></td>
+            <td id="left" colspan="3"><input type="text" name="userdata[last_name]" id="last_name" value="{{ $last_name }}" class="greyINPUT" {{ if($error_last_name, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }} ></td>
+         </tr>
+		 <tr>
+            <td id="left" width="150px"><nobr><b class="cart_ico" id="tick"></b>Имя:</nobr></td>
+            <td id="left" colspan="3"><input type="text" name="userdata[first_name]" id="first_name" value="{{ $first_name }}" class="greyINPUT" {{ if($error_first_name, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }} ></td>
+         </tr>
+		 <tr>
+            <td id="left" width="150px"><nobr><b class="empty_bg"></b>Отчество:</nobr></td>
+            <td id="left" colspan="3"><input type="text" name="userdata[middle_name]" id="middle_name" value="{{ $middle_name }}" class="greyINPUT" {{ if($error_middle_name, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }} ></td>
+         </tr>
          </tr>      
       </table>
       
       
       
-      <div id="juridical_div" style="display:none;">
+      <div id="juridical_div" style="display:{{ IF person}}block{{ ELSE }}none{{ END if-person }};">
       <div class="clear"></div>
       <table border="0" cellpadding="0" cellspacing="0" width="100%" class="medium_table">
          <tr class="propgroup">
@@ -105,40 +99,40 @@ function go_next()
          </tr>         
          <tr>
             <td id="left" width="150px"><nobr><b class="cart_ico" id="tick"></b>Название организации:</nobr></td>
-            <td id="left" width="207px"><input id="userdata_organization" type="text" name="userdata[organization]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left" width="207px"><input id="userdata_organization" type="text" name="userdata[organization]" value="{{ $organization }}" class="greyINPUT" {{ if($error_organization, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }} maxlength="50"></td>
             <td id="left" width="87px"><nobr><b class="cart_ico" id="tick"></b>Банк:</nobr></td>
-            <td id="left"><input id="userdata_bank" type="text" name="userdata[bank]" value="" class="greyINPUT" maxlength="100"></td>
+            <td id="left"><input id="userdata_bank" type="text" name="userdata[bank]" value="{{ $bank }}" class="greyINPUT" maxlength="100" {{ if($error_bank, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
          </tr>
          <tr>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>Р/с:</nobr></td>
-            <td id="left"><input id="userdata_rs" type="text" name="userdata[rs]" value="" class="greyINPUT" maxlength="20"></td>
+            <td id="left"><input id="userdata_rs" type="text" name="userdata[rs]" value="{{ $rs }}" class="greyINPUT" maxlength="20" {{ if($error_rs, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>К/с:</nobr></td>
-            <td id="left"><input id="userdata_ks" type="text" name="userdata[ks]" value="" class="greyINPUT" maxlength="20"></td>
+            <td id="left"><input id="userdata_ks" type="text" name="userdata[ks]" value="{{ $ks }}" class="greyINPUT" maxlength="20" {{ if($error_ks, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
          </tr>
          <tr>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>ИНН:</nobr></td>
-            <td id="left"><input id="userdata_inn" type="text" name="userdata[inn]" value="" class="greyINPUT" maxlength="10"></td>
+            <td id="left"><input id="userdata_inn" type="text" name="userdata[inn]" value="{{ $inn }}" class="greyINPUT" maxlength="10" {{ if($error_inn, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>БИК:</nobr></td>
-            <td id="left"><input id="userdata_bik" type="text" name="userdata[bik]" value="" class="greyINPUT" maxlength="9"></td>
+            <td id="left"><input id="userdata_bik" type="text" name="userdata[bik]" value="{{ $bik }}" class="greyINPUT" maxlength="9" {{ if($error_bik, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
          </tr>
          
          <tr>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>КПП:</nobr></td>
-            <td id="left"><input id="userdata_kpp" type="text" name="userdata[kpp]" value="" class="greyINPUT" maxlength="9"></td> 
+            <td id="left"><input id="userdata_kpp" type="text" name="userdata[kpp]" value="{{ $kpp }}" class="greyINPUT" maxlength="9" {{ if($error_kpp, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td> 
             <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>ОКДП:</nobr></td>
-            <td id="left"><input id="userdata_okdp" type="text" name="userdata[okdp]" value="" class="greyINPUT" maxlength="50"></td> 
+            <td id="left"><input id="userdata_okdp" type="text" name="userdata[okdp]" value="{{ $okdp }}" class="greyINPUT" maxlength="50" {{ if($error_okdp, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td> 
          </tr>
          <tr>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>Юридический адрес:</nobr></td>
-            <td id="left"><input id="userdata_jur_addr" type="text" name="userdata[jur_addr]" value="" class="greyINPUT" maxlength="150"></td>
+            <td id="left"><input id="userdata_jur_addr" type="text" name="userdata[jur_addr]" value="{{ $jur_addr }}" class="greyINPUT" maxlength="150" {{ if($error_jur_addr, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
             <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>ОКПО:</nobr></td>
-            <td id="left"><input id="userdata_okpo" type="text" name="userdata[okpo]" value="" class="greyINPUT" maxlength="50"></td> 
+            <td id="left"><input id="userdata_okpo" type="text" name="userdata[okpo]" value="{{ $okpo }}" class="greyINPUT" maxlength="50" {{ if($error_okpo, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td> 
          </tr>
          <tr>
             <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Сайт компании:</nobr></td>
-            <td id="left"><input id="userdata_www" type="text" name="userdata[www]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left"><input id="userdata_www" type="text" name="userdata[www]" value="{{ $www }}" class="greyINPUT" maxlength="50" {{ if($error_www, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
             <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>ОКОНХ/ОКВЭД:</nobr></td>
-            <td id="left"><input id="userdata_okonh" type="text" name="userdata[okonh]" value="" class="greyINPUT" maxlength="50" style="width:69px"> / <input id="userdata_okved" type="text" name="userdata[okved]" value="" class="greyINPUT" maxlength="50" style="width:69px"></td> 
+            <td id="left"><input id="userdata_okonh" type="text" name="userdata[okonh]" value="{{ $okonh }}" class="greyINPUT" maxlength="50" style="width:69px" {{ if($error_okonh, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}> / <input id="userdata_okved" type="text" name="userdata[okved]" value="" class="greyINPUT" maxlength="50" style="width:69px"></td> 
          </tr>         
       </table>
       </div>
@@ -151,52 +145,52 @@ function go_next()
          <tr>
             <td id="left" width="150px"><nobr><b class="cart_ico" id="tick"></b>Регион:</nobr></td>
             <td id="left" width="200px">
- 				<select name="userdata[region]" class="greyINPUT" id="userdata_region" onChange="regionSelect(this)">
+ 				<select name="userdata[region]" class="greyINPUT" id="userdata_region" onChange="regionSelect(this)" {{ if($error_region, 'style="background-color:#ed1c29;font-weight:bold;"') }}>
 					<option value="">выберите регион</option>
 					
 				</select>
 				</td>
             <td id="left" width="87px"><nobr><b class="cart_ico" id="tick"></b>Дом:</nobr></td>
-            <td id="left"><input id="userdata_house" type="text" name="userdata[house]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+            <td id="left"><input id="userdata_house" type="text" name="userdata[house]" value="{{ $house }}" class="greyINPUT" style="{{ if($error_house, 'background-color:#ed1c29;font-weight:bold;color:#fff;') }}width:50px" maxlength="10"></td>
 				<td id="left" width="87px"><nobr><b class="cart_ico" id="tick"></b>Корпус:</nobr></td>
-				<td id="left"><input id="userdata_corpus" type="text" name="userdata[corpus]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+				<td id="left"><input id="userdata_corpus" type="text" name="userdata[housing]" value="{{ $housing }}" class="greyINPUT" style="{{ if($error_housing, 'background-color:#ed1c29;font-weight:bold;color:#fff;') }}width:50px" maxlength="10"></td>
          </tr>
          <tr>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>Город:</nobr></td>
-            <td id="left"><input id="userdata_city" type="text" name="userdata[city]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left"><input id="userdata_city" type="text" name="userdata[city]" value="{{ $city }}" class="greyINPUT" maxlength="50" {{ if($error_city, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
             <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Строение:</nobr></td>
-            <td id="left"><input id="userdata_building" type="text" name="userdata[building]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+            <td id="left"><input id="userdata_building" type="text" name="userdata[build]" value="{{ $build }}" class="greyINPUT" style="{{ if($error_build, 'background-color:#ed1c29;font-weight:bold;color:#fff;') }}width:50px" maxlength="10"></td>
             <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Подъезд:</nobr></td>
-            <td id="left"><input id="userdata_podezd" type="text" name="userdata[podezd]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+            <td id="left"><input id="userdata_podezd" type="text" name="userdata[porch]" value="{{ $porch }}" class="greyINPUT" style="{{ if($error_porch, 'background-color:#ed1c29;font-weight:bold;color:#fff;') }}width:50px" maxlength="10"></td>
          </tr>
          <tr>
-            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Станция метро:</nobr></td>
-            <td id="left"><input id="userdata_metro" type="text" name="userdata[metro]" value="" class="greyINPUT" maxlength="50"></td>
-            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Офис:</nobr></td>
-            <td id="left"><input id="userdata_office" type="text" name="userdata[office]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
-            <td id="left"><nobr><b class="empty_bg" id="w15h1"></b>Этаж:</nobr></td>
-            <td id="left"><input id="userdata_level" type="text" name="userdata[level]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+            <td id="left"><nobr><b class="empty_bg" ></b>Станция метро:</nobr></td>
+            <td id="left"><input id="userdata_metro" type="text" name="userdata[metro]" value="{{ $metro }}" class="greyINPUT" maxlength="50" {{ if($error_metro, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
+            <td id="left"><nobr><b class="empty_bg" ></b>Офис:</nobr></td>
+            <td id="left"><input id="userdata_office" type="text" name="userdata[office]" value="{{ $office }}" class="greyINPUT" style="{{ if($error_office, 'background-color:#ed1c29;font-weight:bold;color:#fff;') }}width:50px" maxlength="10"></td>
+            <td id="left"><nobr><b class="empty_bg" ></b>Этаж:</nobr></td>
+            <td id="left"><input id="userdata_level" type="text" name="userdata[floor]" value="{{ $floor }}" class="greyINPUT" style="{{ if($error_floor, 'background-color:#ed1c29;font-weight:bold;color:#fff;') }}width:50px" maxlength="10"></td>
          </tr>
          <tr>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>Улица:</nobr></td>
-            <td id="left"><input id="userdata_street" type="text" name="userdata[street]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left"><input id="userdata_street" type="text" name="userdata[street]" value="{{ $street }}" class="greyINPUT" maxlength="50" {{ if($error_street, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>Квартира:</nobr></td>
-            <td id="left"><input id="userdata_flat" type="text" name="userdata[flat]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+            <td id="left"><input id="userdata_flat" type="text" name="userdata[apartment]" value="{{ $apartment }}" class="greyINPUT" style="{{ if($error_apartment, 'background-color:#ed1c29;font-weight:bold;color:#fff;') }}width:50px" maxlength="10" ></td>
             <td id="left" width="87px"><nobr><b class="empty_bg" id="w15h1"></b>Домофон:</nobr></td>
-            <td id="left"><input id="userdata_code" type="text" name="userdata[code]" value="" class="greyINPUT" style="width:50px" maxlength="10"></td>
+            <td id="left"><input id="userdata_code" type="text" name="userdata[intercom]" value="{{ $intercom }}" class="greyINPUT" style="{{ if($error_intercom, 'background-color:#ed1c29;font-weight:bold;color:#fff;') }}width:50px" maxlength="10" ></td>
          </tr>
          <tr>
             <td id="left"><b class="cart_ico" id="tick"></b>Телефон:</td>
-            <td id="left"><input id="userdata_phone" type="text" name="userdata[phone]" value="" class="greyINPUT" maxlength="50"></td>
+            <td id="left"><input id="userdata_phone" type="text" name="userdata[phone]" value="{{ $phone }}" class="greyINPUT" maxlength="50" {{ if($error_phone, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>
             <td id="left"><b class="empty_bg" id="w15h1"></b>Факс:</td>
-            <td id="left" colspan="3"><input id="userdata_fax" type="text" name="userdata[fax]" value="" class="greyINPUT" maxlength="50"></td>  
+            <td id="left" colspan="3"><input id="userdata_fax" type="text" name="userdata[fax]" value="{{ $fax }}" class="greyINPUT" maxlength="50" {{ if($error_fax, 'style="background-color:#ed1c29;font-weight:bold;color:#fff;"') }}></td>  
          </tr>   
          <tr>
             <td id="left"><nobr><b class="cart_ico" id="tick"></b>Мобильный телефон:</nobr><br><span class="grey">+7(XXX)XXX-XX-XX</span></td>
-            <td id="left">+7 <input id="userdata_mobile_phone" type="text" name="userdata[mobile_phone]" value="" class="greyINPUT" style="width:134px" maxlength="50"></td>
-            <td id="left" colspan="4"><div class="fll"><b class="empty_bg" id="w15h1"></b>Грузовой лифт:&nbsp;&nbsp;<input id="userdata_lift" type="checkbox" name="userdata[lift]" value="1" checked></div>
-            <div class="flr" style="margin-right:45px">Подписаться на рассылку новостей:&nbsp;&nbsp;<input id="userdata_maillist" type="checkbox" name="userdata[maillist]" value="1" checked></div></td>  
-         </tr>     
+            <td id="left">+7 <input id="userdata_mobile_phone" type="text" name="userdata[mobile]" value="{{ $mobile }}" class="greyINPUT" style="{{ if($error_mobile, 'background-color:#ed1c29;font-weight:bold;color:#fff;') }}width:134px" maxlength="50" ></td>
+            <td id="left" colspan="4"><div class="fll"><b class="empty_bg" id="w15h1"></b>Грузовой лифт:&nbsp;&nbsp;<input id="userdata_lift" type="checkbox" name="userdata[lift]" value="1" {{ if($lift,'checked') }}></div>
+            <div class="flr" style="margin-right:45px">Подписаться на рассылку новостей:&nbsp;&nbsp;<input id="userdata_maillist" type="checkbox" name="userdata[maillist]" value="1" {{ if($maillist,'checked') }}></div></td>  
+         </tr>
       </table>
       
      
@@ -264,20 +258,6 @@ function go_next()
       
       <div style="clear:both;"></div>
       
-      <!-- промо код аватара -->
-      <!--
-      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="medium_table" style="border-bottom:#cacaca 1px solid;">
-         <tr class="propgroup">
-            <td colspan="2" class="propgroup"><b style="color:red">Введите промо-код предзаказа на Blu-Ray диск "Аватар"</b></td>
-         </tr>     
-         <tr>
-            <td id="left" width="173px"><b class="empty_bg" id="w15h1"></b>Ваш промо-код:&nbsp;</td>
-      		<td id="left"><input type="text" name="avatar_promo" value="" size="13" maxlength="13" class="greyINPUT"></td>
-         </tr> 
-      </table>
-      
-      <div class="offset"></div>
-      -->
 
       <!-- бонусная карта -->
       
@@ -300,7 +280,7 @@ function go_next()
    		         
          <tr>
             <td id="left" width="173px"><b class="empty_bg" id="w15h1"></b>Номер Вашей бонусной карты:&nbsp;</td>
-      		<td id="left"><input type="text" name="bonuscard" value="" maxlength="8" class="greyINPUT"></td>
+      		<td id="left"><input type="text" name="bonuscard" value="{{ $bonuscard }}" maxlength="8" class="greyINPUT"></td>
          </tr> 
       </table>
       
@@ -333,3 +313,4 @@ function go_next()
 </div>
 
 </form>
+{{ END }}

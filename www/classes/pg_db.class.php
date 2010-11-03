@@ -45,7 +45,23 @@ class pg_db {
 	function set_db_name($dbname){
 		$this->db_name = $dbname;
 	}
+	public function checkBool($param)
+	{
+		$res = (bool)$param?"True":"False";
+		return $res;
+	}
+	public function checkInt($param)
+	{
+		$res = (int)$param?(int)$param:"Null";
+		return $res;
+	}
 	
+	public function getId($table, $seq_name="_id_seq")
+	{
+		$this->query("SELECT last_value as id FROM ".$table.$seq_name.";");
+		$id = $this->fetch_one();
+		return $id['id'];
+	}
 	function connect(){
 		if(isset($this->link_id) && !empty($this->link_id))return true;
 		$this->connection_string .= (!empty($this->host))?(sprintf(" host=%s",$this->host)):('');
@@ -129,7 +145,7 @@ class pg_db {
 	
 	function disconnect(){
 		if($this->connect()){
-			pg_close($this->link_id);
+			//pg_close($this->link_id);
 		}
 	}
 	

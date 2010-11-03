@@ -22,9 +22,8 @@ class catalog extends module_abstract {
 	 */
 	
 	private $search;
-	/**
-	 * 
-	 */
+
+	
 	function __construct() {
 		parent::__construct();
 		$this->filter = new filter();
@@ -74,7 +73,9 @@ class catalog extends module_abstract {
 		
 		//print_r($this->args);
 		$t_name = '';
-		if($this->args['group']!=0){
+		if($this->args['good']!=0){
+			$t_name = "shop_cart";
+		}elseif($this->args['group']!=0){
 			$t_name = "classes";	
 		}elseif($this->args['node']!=0&&$this->args['class']!=0){
 			$t_name = "goods";
@@ -103,9 +104,8 @@ class catalog extends module_abstract {
 		}
 		//print_r($data);
 		$this->template->set_block("data",$data,$t_name,"catalog");
+		//print_r($this->template);
 		echo $this->template->parse($t_name,"catalog");
-		
-		
 		
 		echo "\n\ntotal time = ".(1000*(microtime() - $start))." ms";
 	}

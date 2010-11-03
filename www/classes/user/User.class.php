@@ -10,47 +10,38 @@
  */
 
 	namespace User;
-	require_once 'privateOffice.interface.php';
-	
-class User extends Users {
+	require_once 'User.interface.php';
+
+
+
+
+
+class User extends UserTemplate implements UserPrivateOffice {
 	
 	public function __construct() {
+		$this->tpl_name = "user/user_form";
 		parent::__construct();
+		$this->template->add_template($this->tpl_name);
 	}
-	/**
-	 * возвращает ФИО пользователя, телефон (контактный, мобильный)
-	 * для юридических лиц ИНН, БИК, Кор. счет + юридический адресс
-	 */
-	public function getUserInfo(){}
 	
 	/**
 	 * принемает $_POST запрос с данными
 	 * возвращает ФИО пользователя, телефон (контактный, мобильный)
 	 * для юридических лиц ИНН, БИК, Кор. счет + юридический адресс
 	 */
-	public function editUserInfo(){}
-	
-	/**
-	 * возвращает адрес доставки "по умолчанию"
-	 */
-	public function getDeliveryAddress(){}
-	
-	/**
-	 * возвращает все адреса пользователя
-	 */
-	public function getUserAdress(){}
+	private function editUserInfo(){}
 	
 	/**
 	 * принемает $_POST запрос с данными
 	 * возвращает все адрес пользователя
 	 */
-	public function addUserAdress(){}
+	private function addUserAdress(){}
 	
 	/**
 	 * принемает $_POST запрос с данными
 	 * возвращает все адрес пользователя
 	 */
-	public function editUserAdress(){}
+	private function editUserAdress(){}
 	
 	/**
 	 * возвращает данные из сесии в виде масива
@@ -63,7 +54,5 @@ class User extends Users {
 	 * @param $value
 	 */
 	public function setSessionData($name, $value){}
-	
-	public function fetch();
 	
 }

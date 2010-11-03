@@ -2,9 +2,7 @@
 
 $start = microtime(true);
 
-date_default_timezone_set('Europe/Moscow');
-ini_set("display_errors",'Off');
-ini_set("error_reporting",E_ALL & !E_NOTICE);
+
 session_start();
 require 'classes/mainpage.class.php';
 

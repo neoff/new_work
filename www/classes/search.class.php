@@ -18,6 +18,11 @@ class search extends module_abstract {
 		parent::__construct();
 	}
 	
+	/**
+	 * Преобразует число в массив для того что бы отображать цену в виде картинок.
+	 * @param int $dig - число (цена)
+	 * @return - Array
+	 */
 	protected function parse_price($dig){
 		$str = '';
 		$str .= $dig;
@@ -26,6 +31,12 @@ class search extends module_abstract {
 		for($k=0;$k<$j;$k++)$out[$k]['value'] = $str[$k];
 		return $out;
 	}
+	
+	/**
+	 * Хлебные крошки
+	 * @param array $data - информация из catalog->args
+	 * @return - Array
+	 */
 	
 	public function get_path($data){
 		$out = array();
@@ -91,6 +102,11 @@ class search extends module_abstract {
 		return $out;		
 	}
 	
+	/**
+	 * набор страниц для каталога
+	 * @return - Array
+	 */
+	
 	public function get_pager(){
 		
 		$ci = $this->current_items;
@@ -113,6 +129,11 @@ class search extends module_abstract {
 		$data['prev_next'] = $next;
 		return $data;
 	}
+	
+	/**
+	 * @param int $num - число записей, которые надо выбрать, если 0, то возвращает все
+	 * @return - Array
+	 */
 	
 	public function get_new_goods($num=3){//есть num == 0 то выбираем все
 		$query = "
@@ -158,7 +179,10 @@ class search extends module_abstract {
 		
 	}
 	
-	
+	/**
+	 * Возвращает товар дня 
+	 * @return - Array
+	 */
 	public function get_goods_of_day(){
 		
   		$query = "
@@ -226,6 +250,74 @@ class search extends module_abstract {
 		
 	}
 	
+	/**
+	 * Возвращает все данные для карточки товара
+	 * @param int $good_id - идентификатор товара
+	 * @return - Array
+	 */
+	
+	protected function get_shopcart($good_id){
+		$query = "
+			SELECT 
+				kis_catalog.*,
+				kis_prices.*,
+				kis_marks.mark_name,
+				kis_reviews.review
+			FROM
+				kis_catalog
+				LEFT JOIN
+					kis_prices
+				ON
+					kis_prices.goods_id = kis_catalog.goods_id
+				LEFT JOIN
+					kis_marks
+				ON
+					kis_marks.mark_id = kis_catalog.mark_id
+				LEFT JOIN
+					kis_reviews
+				ON
+					kis_reviews.goods_id = kis_catalog.goods_id
+			WHERE
+				kis_catalog.goods_id = %d
+				AND
+				kis_prices.region_id = %d
+			LIMIT 1;";
+
+		$query_select_desc = "
+			SELECT 
+				kis_desclist_index.*, 
+				kis_properties.property_name, 
+				kis_property_groups.property_group_name
+			FROM 
+				kis_desclist_index
+				LEFT JOIN
+					kis_properties
+				ON
+					kis_properties.property_name_id = kis_desclist_index.property_name_id
+				LEFT JOIN
+					kis_property_groups
+				ON
+					kis_property_groups.property_group_id = kis_desclist_index.property_group_id
+
+			WHERE
+					kis_desclist_index.goods_id = '%d'
+			ORDER BY kis_desclist_index.desc_order ASC;";
+		$this->db->query(sprintf($query,$good_id,$this->region));
+		$good_info = $this->db->fetch_one();
+		if(!is_array($good_info))return array();
+		$this->db->query(sprintf($query_select_desc,$good_id));
+		$good_info['price_formated'] = $this->parse_price($good_info['price']);
+		$good_info['old_price_formated'] = $this->parse_price($good_info['old_price']);
+		$good_info['descr_list'] = $this->db->fetch_all_result();
+		return $good_info;
+	}
+	/**
+	 * Возвращает информацию об одном товаре
+	 * @param int $good_id - id товара
+	 * @param boolean $full - делать ли полную выборку
+	 * @param int $desc_limit - количество свойств товара, которые нужны
+	 * @return - Array
+	 */
 	protected function get_good($good_id,$full=false,$desc_limit=0){
 		/*if($this->is_cached($good_id)){
 			return $this->goods_container[$good_id]['data'];
@@ -275,6 +367,13 @@ class search extends module_abstract {
 		
 	}
 	
+	/**
+	 * Возвращает список товаров c описанием при заданных dir и class
+	 * @param int $dir
+	 * @param int $class
+	 * @return - Array
+	 */
+	
 	protected function get_goods_by_class($dir,$class){
 		$data = array();
 		$this->db->query(sprintf("
@@ -315,8 +414,9 @@ class search extends module_abstract {
 	}
 	
 	/**
-	 * Если в ноде 1 класс, то надо выводить товары, если больше, то классы
-	 * true если класс 1
+	 * Проверяет количество классов в $node, если класс 1, то true, иначе false
+	 * @param int $node
+	 * @return boolean
 	 */
 	protected function check_node($node){
 		$query_check = "
@@ -331,6 +431,14 @@ class search extends module_abstract {
 		return $tmp[0]['answ'] == 1 ? true : false;
 	}
 	
+	/**
+	 * Возвращает информацию о текущем разделе
+	 * @param int $node
+	 * @param int $class
+	 * @param int $group
+	 * @return - Array
+	 */
+	
 	protected function  get_node_info($node,$class=0,$group=0){
 		if($node!=catalog_data_variables::$defaults['node']&&$class==catalog_data_variables::$defaults['class']&&$group==catalog_data_variables::$defaults['group']){
 			$this->db->query(sprintf("SELECT catalog_tree.tree_name as name FROM catalog_tree WHERE tree_id = '%d';",$node));
@@ -341,9 +449,21 @@ class search extends module_abstract {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param array $data - catalog->args
+	 * @return - Array
+	 */
+	
+	
 	public function get_info($data){
 		$this->page = $data['page'];
 		$this->items_per_page = $data['items_per_page'];
+		if($data['good']!=catalog_data_variables::$defaults['good'] ){
+			$out = array();
+			$out = $this->get_shopcart($data['good']);
+			return $out;
+		}
 		if($data['searchword']!=catalog_data_variables::$defaults['searchword']){
 			return $this->search_by_keyword($data);
 		}
@@ -366,6 +486,12 @@ class search extends module_abstract {
 	}
 	
 
+	/**
+	 * Возвращает список товаров при заданной ноде и классе.
+	 * @param int $node
+	 * @param int $class
+	 * @return - Array
+	 */
 	
 	protected function get_goods_by_node_class($node,$class){
 		$query_select_desc = "
@@ -473,7 +599,12 @@ class search extends module_abstract {
 	
 	
 	}
-	
+	/**
+	 * Возвращает список товаров при заданной ноде, если в ноде больше одного класса, то возвращает $this->get_classes_by_group
+	 * @param int $node
+	 * @param int $group
+	 * @return - Array
+	 */
 	
 	protected function get_goods_by_node($node=0,$group=0){
 		if(isset($group)&&$group!=0){
@@ -580,7 +711,12 @@ class search extends module_abstract {
 		return array("data" => $data);
 	}
 	
-
+	/**
+	 * Возвращает список классов привязанных к ноде
+	 * @param int $node
+	 * @return - Array
+	 */
+	
 	protected function get_classes_by_node($node){
 		$query_select_relations_by_node = "SELECT catalog_tree_relations.* FROM catalog_tree_relations WHERE catalog_tree_relations.tree_id = '%d';";
 		$query_select_classes_by_full_info = "
@@ -622,7 +758,11 @@ class search extends module_abstract {
 	}
 	
 	
-	
+	/**
+	 * Возвращает список классов в группе нод
+	 * @param int $group
+	 * @return - Array
+	 */
 	
 	protected function get_classes_by_group($group){
 		$query_select_relations_by_group = "SELECT catalog_tree_relations.* FROM catalog_tree_relations WHERE catalog_tree_relations.tree_id IN (SELECT tree_id FROM catalog_tree WHERE tree_group = '%d' );";
@@ -724,6 +864,13 @@ class search extends module_abstract {
 		return $data_out;
 	}
 	
+	
+	/**
+	 * Возвращает список товаров в группе
+	 * @param int $group
+	 * @return - Array
+	 */
+	
 	protected function get_goods_by_group($group){
 		$query_select_desc = "
 			SELECT 
@@ -793,6 +940,12 @@ class search extends module_abstract {
 		return $data;
 	}
 	
+	/**
+	 * Поиск, !!!пока лучше не использовать!!!
+	 * @param int $data - catalog->args
+	 * @return - Array
+	 */
+	
 	protected function search_by_keyword($data){
 		
 		$searchword = addslashes($data['searchword']);
@@ -848,10 +1001,15 @@ class search extends module_abstract {
 			}
 		}
 		$this->update_desc_cache($descs);
-		return array("data" => $data);;
+		return array("data" => $data);
 		
 	}
 	
+	/**
+	 * Обновления кэша краткого списка свойств товара(товаров)
+	 * @param array $desc - массив с описаниями товара или массив с группой товаров и описания к ним
+	 * @param int $goods_id - идентификатор товара, если добавляется группа товаров, то задавать параметр не нужно
+	 */
 	
 	protected function update_desc_cache($desc,$goods_id=0){
 		$query = "UPDATE kis_catalog SET desc_cache = '%s' WHERE goods_id = %d;\n";
@@ -878,7 +1036,9 @@ class search extends module_abstract {
 	}
 	
 	
-	
+	/**
+	 * В данном модуле не нужна
+	 */
 	
 	function fetch(){
 		
